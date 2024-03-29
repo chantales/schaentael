@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homepage</title>
+</head>
+<body>
+  <style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  padding: 0;
+  }
+
+.topnav {
+  background-color: #f1d5db;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+.topnav a {
+  float: left;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #e6b2be;
+  color: white;
+}
+
+.slidey fade {
+  display: none;
+  vertical-align: middle;
+  width: 1000px;
+  height: 200px;
+}
+        
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  }
+    
+.active {
+  background-color: #ffffff
+}
+        
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+ }
+        
+ @keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+  }
+        
+.slide-img {
+  width: 1000px; 
+  height: 700px;
+  }
+
+  </style>
+</head>
+
+<body>
+<div class="topnav">
+  <a href="index.html">home</a>
+  <a href="products.html">products</a>
+  <a href="about us.html">about us</a>
+  <a href="contact.html">contact us</a>
+  <a href="reviews.html">reviews</a>
+</div>
+
+
+<div class="slideshow-container">
+        
+  <div class="slidey fade">
+    <img src="mago.jpeg"alt="Slide 1" class="slide-img" >
+  </div>
+        
+  <div class="slidey fade">
+    <img src="mango2.jpeg" alt="Slide 2" class="slide-img">
+  </div>
+        
+  <div class="slidey fade">
+    <img src="mango3.jpeg"alt="Slide 3" class="slide-img">
+  </div>
+
+  <div class="slidey fade">
+   <img src="mango4.jpeg" alt="Slide 4" class="slide-img">
+  </div>
+
+  <div class="slidey fade">
+   <img src="mango5.jpeg" alt="Slide 5" class="slide-img" >
+  </div>
+        
+
+
+</div>
+<br>
+
+  <script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slidey");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 3000);
+}
+        </script>
+        
+
+</body>
+
+</html>
