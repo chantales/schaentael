@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>photocard-holders</title>
+    <title>photocard-holders-plain</title>
     <style>
 
 body {
@@ -30,10 +30,35 @@ body {
   background-color: #e6b2be;
   color: #ffffff;
 }
+.dropdownButton {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+}
+
+#dropdownContent {
+  display: none;
+  position:absolute;
+  z-index:1;
+}
+#dropdownContent a:hover 
+{background-color: #e6b2be;}
+
+.dropdown:hover #dropdownContent 
+{display: block;}
+
+.dropdown:hover .dropbtn 
+{background-color: #e6b2be;}
+
+#dropdownContent a {
+  color: #f3d3db;
+  padding: 12px 16px;
+  display: block;
+}
 
 #slideshowContainer {
     position: relative;
-    width: 600px;
+    width: 1200px;
 }
 
 .slides {
@@ -68,10 +93,13 @@ body {
 <body>
     <div class="topnav">
         <a href="index.html">home</a>
-        <a href="products.html">products</a>
+        <button class="dropdownButton">products</button>
+        <div id="dropdownContent">
+          <a href="products.html">products</a>
+          <a href="order.html">order here</a>
+        </div>
         <a href="about us.html">about us</a>
         <a href="contact.html">contact us</a>
-        <a href="reviews.html">reviews</a>
     </div>
 
 
@@ -94,12 +122,12 @@ body {
 
 <div class="text">
   <h1 id="title">PHOTOCARD HOLDERS (PLAIN)</h1>
- <h3 id="desc"></h3>
+  <h3 class="desc"> Add a touch of personality to your bags or keys with these handmade photo card holders!</h3>
+  <h3 class="desc">comes in: green, blue, beige, pink, or you can choose your own colour</h3>
+  <h2 class="desc">$7</h2>
 </div>
 
-
-
-
+<a class="button" href=""><button>click to place an order !!</button></a>
 
 <script>
 let slideIndex = 1;

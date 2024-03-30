@@ -32,6 +32,31 @@ body {
   color: white;
 }
 
+.dropdownButton {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+}
+
+#dropdownContent {
+  display: none;
+  position:absolute;
+  z-index:1;
+}
+#dropdownContent a:hover 
+{background-color: #e6b2be;}
+
+.dropdown:hover #dropdownContent 
+{display: block;}
+
+.dropdown:hover .dropbtn 
+{background-color: #e6b2be;}
+
+#dropdownContent a {
+  color: #f3d3db;
+  padding: 12px 16px;
+  display: block;
+}
 h3{
     font-family:courier;
 }
@@ -71,10 +96,13 @@ h3{
 <body>
     <div class="topnav">
         <a href="index.html">home</a>
-        <a href="products.html">products</a>
+        <button class="dropdownButton">products</button>
+        <div id="dropdownContent">
+          <a href="products.html">products</a>
+          <a href="order.html">order here</a>
+        </div>
         <a href="about us.html">about us</a>
         <a href="contact.html">contact us</a>
-        <a href="reviews.html">reviews</a>
       </div>
 
 <div id="whole">
