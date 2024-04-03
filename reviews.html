@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+   <style>
+body {
+  margin: 0;
+  padding: 0;
+  }
+
+.topnav {
+  background-color: #f1d5db;
+  overflow: hidden;
+  font-family: monospace;
+}
+
+#logoNav {
+  width: 300px;
+}
+
+.topnav a {
+  float: left;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #e6b2be;
+  color: white;
+}
+
+#logoNav  {
+  display: flex;
+
+}
+
+.dropdownButton {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+  padding: 20px;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+#dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+#dropdownContent {
+  display: none;
+  position:absolute;
+  z-index:999;
+}
+
+#dropdownContent a {
+  color: #FFFFFF;
+  background-color: #d4ccdc;
+  padding: 20px;
+  display: block;
+  font-size: 16px;
+}
+
+#dropdownContent a:hover 
+{background-color: #bab0c4
+      ;}
+
+
+#dropdown:hover #dropdownContent {
+      display: flex;
+      flex-direction: column;
+}
+
+#dropdown:hover .dropdownButton 
+{background-color: #e6b2be;}
+
+
+
+   </style>   
+<img src="logo clear.png" id="logoNav">
+<div class="topnav">
+  <a href="index.html">home</a>
+  <div id="dropdown">
+      <button class="dropdownButton">products</button>
+        <div id="dropdownContent">
+  <a href="products.html">products</a>
+  <a href="order.html">order here</a>
+          </div>
+          </div>
+  <a href="about us.html">about us</a>
+   <a href="contact.html">contact us</a>
+ </div>
+</body>
+</html>
