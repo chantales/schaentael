@@ -38,11 +38,19 @@ body {
   font-family:'monospace';
   padding: 20px;
   border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+#logoNav  {
+ height: 65px;
+ width: auto;
+ float: right;
 }
 
 #dropdown {
-  position: relative;
-  display: inline-block;
+  float: left;
+  overflow: hidden;
 }
 
 #dropdownContent {
@@ -51,21 +59,26 @@ body {
   z-index:999;
 }
 
-#dropdownContent a:hover 
-{background-color: #e6b2be;}
+#dropdownContent a {
+  color: #FFFFFF;
+  background-color: #d4ccdc;
+  padding: 20px;
+  display: block;
+  font-size: 16px;
+}
 
-#dropdown:hover #dropdownContent 
-{display: block;
+#dropdownContent a:hover 
+{background-color: #bab0c4
+      ;}
+
+
+#dropdown:hover #dropdownContent {
+      display: flex;
+      flex-direction: column;
 }
 
 #dropdown:hover .dropdownButton 
 {background-color: #e6b2be;}
-
-#dropdownContent a {
-  color: #f3d3db;
-  padding: 12px 16px;
-  display: block;
-}
 
 h3{
     font-family:courier;
@@ -104,28 +117,35 @@ h3{
 
 </head>
 <body>
-    <div class="topnav">
-        <a href="index.html">home</a>
-        <div id="dropdown">
+  <div class="topnav">
+    <img src="SC-removebg-preview.png" id="logoNav">
+    <a href="index.html">home</a>
+    <div id="dropdown">
         <button class="dropdownButton">products</button>
-        <div id="dropdownContent">
-          <a href="products.html">products</a>
-          <a href="order.html">order here</a>
-        </div>
-        </div>
-        <a href="about us.html">about us</a>
-        <a href="contact.html">contact us</a>
-      </div>
+          <div id="dropdownContent">
+    <a href="products.html">products</a>
+    <a href="order.html">order here</a>
+            </div>
+            </div>
+    <a href="about us.html">about us</a>
+     <a href="contact.html">contact us</a>
+   </div>
+  
 
 <div id="whole">
 <img src="mago.jpeg" id="image">
 <div id="overallText">
     <h1>about us!</h1>
         <h3 id="text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eget nulla facilisi etiam dignissim diam quis enim lobortis. Faucibus in ornare quam viverra orci. Turpis nunc eget lorem dolor sed viverra ipsum. Eros in cursus turpis massa tincidunt. Libero volutpat sed cras ornare. Consectetur a erat nam at lectus urna duis convallis convallis. Quis risus sed vulputate odio ut enim blandit volutpat. Risus sed vulputate odio ut enim blandit volutpat maecenas. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet dictum sit amet justo donec enim.
+    "Hello!! I'm Chantale. 
+
+    I'm 14 years old and I love to craft! I originally learnt to cross-stitch around 2020, and somehow ended up learning to knit. One day, I was tired of knitting and decided to try to crochet. To put it simply, it went bad. I messed it up and lost all hope. One day in 2022 I decided to suck it up and try again. My first actual project was basically falling apart, but I could crochet, who cares!
+    
+    After that, I started to crochet a lot more, and honestly I'm so glad I didn't drop it completely because I didn't realize how useful it was. I can make literally anything I want now. But, I will always love to make little dinosaurs and give them tophats."
+    -chantale
 <br>
 <br>
-        Cras semper auctor neque vitae tempus. Dictum varius duis at consectetur lorem donec massa sapien. Ullamcorper morbi tincidunt ornare massa eget. Cursus in hac habitasse platea dictumst quisque sagittis purus. Aenean pharetra magna ac placerat vestibulum lectus. Enim diam vulputate ut pharetra sit.
+  
         </h3>
 </div>
 </div>

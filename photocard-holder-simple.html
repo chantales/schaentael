@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>photocard-holders-plain</title>
+    <style>
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Courier;
+  }
+
+.topnav {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #e6b2be;
+  color: #ffffff;
+}
+
+.dropdownButton {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+  padding: 20px;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+#logoNav  {
+ height: 65px;
+ width: auto;
+ float: right;
+}
+
+#dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+#dropdownContent {
+  display: none;
+  position:absolute;
+  z-index:999;
+}
+
+#dropdownContent a {
+  color: #FFFFFF;
+  background-color: #d4ccdc;
+  padding: 20px;
+  display: block;
+  font-size: 16px;
+}
+
+#dropdownContent a:hover 
+{background-color: #bab0c4
+      ;}
+
+
+#dropdown:hover #dropdownContent {
+      display: flex;
+      flex-direction: column;
+}
+
+#dropdown:hover .dropdownButton 
+{background-color: #e6b2be;}
+
+#slideshowContainer {
+    position: relative;
+    width: auto;
+}
+
+.slides {
+    display:none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  user-select: none;
+  transition: 0.6s ease; 
+  font-weight: bold;
+  font-size: 18;
+}
+
+.next {
+  right: 40px;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left:40px;
+  border-radius: 3px 0 0 3px;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.slides {
+  display: flex;
+  justify-content: flex-start;
+  padding: 40px;
+}
+
+.button {
+  height: 20px;
+  padding: 10px;
+  font-family: Courier;
+  background-color: #bab0c4;
+  color: #ffffff;
+}
+
+.allInfo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (max-width:768px) {
+    .slides {
+        width:70%;
+    }
+  }
+
+
+</style>
+</head>
+<body>
+  <div class="topnav">
+    <img src="SC-removebg-preview.png" id="logoNav">
+    <a href="index.html">home</a>
+    <div id="dropdown">
+        <button class="dropdownButton">products</button>
+          <div id="dropdownContent">
+    <a href="products.html">products</a>
+    <a href="order.html">order here</a>
+            </div>
+            </div>
+    <a href="about us.html">about us</a>
+     <a href="contact.html">contact us</a>
+   </div>
+  
+
+<div class="allInfo">
+<div id="slideshowContainer">
+    <div class="slides">
+        <img src="Screenshot 2024-03-28 9.17.58 AM.png" style="width:600px">
+    </div>
+
+    <div class="slides">
+        <img src="Screenshot 2024-03-28 9.18.43 AM.png" style="width:600px">
+    </div>
+
+    <div class="slides">
+        <img src="Screenshot 2024-03-28 9.18.50 AM.png" style="width:600px">
+    </div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+
+
+<div class="text">
+  <h1 id="title">PHOTOCARD HOLDERS (SIMPLE)</h1>
+  <h3 class="desc"> Add a touch of personality to your bags or keys with these handmade photo card holders!</h3>
+  <h3 class="desc">comes in: green, blue, beige, pink, or you can choose your own colour</h3>
+  <h3 class="size">size: roughly 20cm x 30cm</h3>
+  <h2 class="desc">$7</h2>
+<a class="button" href=""><button>click to place an order !!</button></a>
+</div>
+
+<div class="textBig">
+  <h2>examples of some uses for this product include :</h2>
+  <h3>
+    - a photocard holder
+    - to hold your hop card / drivers license / id card
+    - to keep photos of your loved ones
+    - anything you want. 
+  </h3>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+</script>
+</body>
+</html>

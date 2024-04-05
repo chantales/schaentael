@@ -32,9 +32,53 @@
       color: white;
 }
 
+.dropdownButton {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+  padding: 20px;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+#logoNav  {
+ height: 65px;
+ width: auto;
+ float: right;
+}
+
+#dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+#dropdownContent {
+  display: none;
+  position:absolute;
+  z-index:999;
+}
+
+#dropdownContent a {
+  color: #FFFFFF;
+  background-color: #d4ccdc;
+  padding: 20px;
+  display: block;
+  font-size: 16px;
+}
+
+#dropdownContent a:hover 
+{background-color: #bab0c4
+      ;}
 
 
+#dropdown:hover #dropdownContent {
+      display: flex;
+      flex-direction: column;
+}
 
+#dropdown:hover .dropdownButton 
+{background-color: #e6b2be;}
 
 #words {
       text-align: center;
@@ -76,7 +120,21 @@
 </style>
 </head>
 <body>
-
+<div class="topnav">
+            <img src="SC-removebg-preview.png" id="logoNav">
+            <a href="index.html">home</a>
+            <div id="dropdown">
+                <button class="dropdownButton">products</button>
+                  <div id="dropdownContent">
+            <a href="products.html">products</a>
+            <a href="order.html">order here</a>
+                    </div>
+                    </div>
+            <a href="about us.html">about us</a>
+             <a href="contact.html">contact us</a>
+           </div>
+          
+           
 <div id="words">
 <div id="title">
           <h1>contact us!!</h1>
