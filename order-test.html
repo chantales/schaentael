@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>order-page</title>
+<style>
+      body {
+  margin: 0;
+  padding: 0;
+  }
+
+.topnav {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+}
+
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.topnav a:hover {
+  background-color: #e6b2be;
+  color: #ffffff;
+}
+
+
+.dropdownButton {
+  background-color: #f3d3db;
+  overflow: hidden;
+  font-family:'monospace';
+  padding: 20px;
+  border: none;
+  font-size: 20px;
+  color: #FFFFFF;
+}
+
+#logoNav  {
+ height: 60px;
+ width: auto;
+ float: right;
+}
+
+#dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+#dropdownContent {
+  display: none;
+  position:absolute;
+  z-index:999;
+}
+
+#dropdownContent a {
+  color: #FFFFFF;
+  background-color: #d4ccdc;
+  padding: 20px;
+  display: block;
+  font-size: 16px;
+}
+
+#dropdownContent a:hover 
+{background-color: #bab0c4
+      ;}
+
+
+#dropdown:hover #dropdownContent {
+      display: flex;
+      flex-direction: column;
+}
+
+#dropdown:hover .dropdownButton 
+{background-color: #e6b2be;}
+
+</style>
+</head>
+<body>
+  <div class="topnav">
+    <img src="SC-removebg-preview.png" id="logoNav">
+    <a href="index.html">home</a>
+    <div id="dropdown">
+        <button class="dropdownButton">products</button>
+          <div id="dropdownContent">
+    <a href="products.html">products</a>
+    <a href="order.html">order here</a>
+            </div>
+            </div>
+    <a href="about us.html">about us</a>
+     <a href="contact.html">contact us</a>
+   </div>
+  
+
+<div id="iNeedPadding">
+
+  <div id="enterDetails">
+    <h1>Enter details</h1>
+
+    <h4>ID</h4> 
+    <input id="enterID" type="text"> 
+
+    <h4>Name</h4> 
+    <input id="enterName" type="text"> 
+
+    <h4>Age</h4> 
+    <input id="enterAge" type="number"> <br><br>
+
+    <button id="insert">INSERT</button>
+    <button id="update">UPDATE</button>
+    <button id="remove">REMOVE</button> <br><br>
+</div>
+
+<div id="findDetails">
+    <h1>Find by ID</h1>
+    <h4>ID</h4>
+    <input id="findID" type="text"> <br><br>
+    <button id="find">FIND</button>
+    <h3 id="findName" type="text"></h3>
+    <h3 id="findAge" type="number"></h3> <br><br>
+</div>
+
+</div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB5hySgzyVyBVS9F_cAmjoIidp_Hk3_nPw",
+    authDomain: "productinfocrochet.firebaseapp.com",
+    databaseURL: "https://productinfocrochet-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "productinfocrochet",
+    storageBucket: "productinfocrochet.appspot.com",
+    messagingSenderId: "5640809527",
+    appId: "1:5640809527:web:a42be23ef85a6f676523b2",
+    measurementId: "G-CW7TNSV27X"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  
+  import {getDatabase, set, get, update, remove, ref, child}
+  from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
+
+ const db = getDatabase();
+
+        var enterID = document.querySelector("#enterID");
+        var enterName = document.querySelector("#enterName");
+        var enterAge = document.querySelector("#enterAge");
+        var findID = document.querySelector("#findID");
+        var findName = document.querySelector("#findName");
+        var findAge = document.querySelector("#findAge");
+      
+
+        var insertBtn = document.querySelector("#insert");
+        var updateBtn = document.querySelector("#update");
+        var removeBtn = document.querySelector("#remove");
+        var findBtn = document.querySelector("#find");
+
+        function InsertData() {
+            set(ref(db, "People/"+ enterID.value),{
+                Name: enterName.value,
+                ID: enterID.value,
+                Age: enterAge.value
+            })
+            .then(()=>{
+                alert("Data added successfully");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }
+
+        function FindData() {
+            const dbref = ref(db);
+
+            get(child(dbref, "People/" + findID.value))
+            .then((snapshot)=>{
+                if(snapshot.exists()){
+                    findName.innerHTML = "Name: " + snapshot.val().Name;
+                    findAge.innerHTML = "Age: " + snapshot.val().Age;
+                } else {
+                    alert("No data found");
+                }
+            })
+            .catch((error)=>{
+                alert(error)
+            })
+            
+        }
+
+        function UpdateData(){
+            update(ref(db, "People/"+ enterID.value),{
+                Name: enterName.value,
+                Age: enterAge.value
+            })
+            .then(()=>{
+                alert("Data updated successfully");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }
+
+        function RemoveData(){
+            remove(ref(db, "People/"+ enterID.value))
+            .then(()=>{
+                alert("Data deleted successfully");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+        }
+
+        insertBtn.addEventListener('click', InsertData);
+        updateBtn.addEventListener('click', UpdateData);
+        removeBtn.addEventListener('click', RemoveData);
+        findBtn.addEventListener('click', FindData);
+
+</script>
+</body>
+</html>

@@ -100,11 +100,35 @@
   
 
 <div id="iNeedPadding">
-      
-
-
-
 
 </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB5hySgzyVyBVS9F_cAmjoIidp_Hk3_nPw",
+    authDomain: "productinfocrochet.firebaseapp.com",
+    databaseURL: "https://productinfocrochet-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "productinfocrochet",
+    storageBucket: "productinfocrochet.appspot.com",
+    messagingSenderId: "5640809527",
+    appId: "1:5640809527:web:a42be23ef85a6f676523b2",
+    measurementId: "G-CW7TNSV27X"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  
+  import {getDatabase, set, get, update, remove, ref, child}
+  from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
+
+ const db = getDatabase();
+
+
+</script>
 </body>
 </html>
