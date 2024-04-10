@@ -127,27 +127,23 @@
 
 </div>
 <script type="module">
-    // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+ // Import the functions you need from the SDKs you need
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
   // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyC6wWk0NSrkKQW60fNW7RRZhkQcv_wuPBQ",
-    authDomain: "peopleinfo-f612b.firebaseapp.com",
-    projectId: "peopleinfo-f612b",
-    storageBucket: "peopleinfo-f612b.appspot.com",
-    messagingSenderId: "59789335010",
-    appId: "1:59789335010:web:83d37179ef33749ffcc1bb",
-    measurementId: "G-4Y1N200P61"
+    apiKey: "AIzaSyAI2ataYlzvmEfuQry6XLqz0qN7QhfvbIs",
+    authDomain: "peopleorder-3f1f4.firebaseapp.com",
+    projectId: "peopleorder-3f1f4",
+    storageBucket: "peopleorder-3f1f4.appspot.com",
+    messagingSenderId: "96953007204",
+    appId: "1:96953007204:web:558aae69099be63528b371"
   };
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
   
   import {getDatabase, set, get, update, remove, ref, child}
   from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
@@ -168,13 +164,13 @@
         var findBtn = document.querySelector("#find");
 
         function InsertData() {
-            set(ref(db, "People/"+ enterID.value),{
+            set(ref(db, "People/"+ enterID.value), {
                 Name: enterName.value,
                 ID: enterID.value,
                 Age: enterAge.value
             })
             .then(()=>{
-                alert("Data added successfully");
+                 alert("Data added successfully");
             })
             .catch((error)=>{
                 alert(error);
@@ -182,7 +178,7 @@
         }
 
         function FindData() {
-            const dbref = ref(db);
+            const dbref = ref (db);
 
             get(child(dbref, "People/" + findID.value))
             .then((snapshot)=>{
