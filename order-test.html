@@ -127,28 +127,30 @@
 
 </div>
 <script type="module">
-  // Import the functions you need from the SDKs you need
+    // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   const firebaseConfig = {
-    apiKey: "AIzaSyB5hySgzyVyBVS9F_cAmjoIidp_Hk3_nPw",
-    authDomain: "productinfocrochet.firebaseapp.com",
-    databaseURL: "https://productinfocrochet-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "productinfocrochet",
-    storageBucket: "productinfocrochet.appspot.com",
-    messagingSenderId: "5640809527",
-    appId: "1:5640809527:web:a42be23ef85a6f676523b2",
-    measurementId: "G-CW7TNSV27X"
+    apiKey: "AIzaSyC6wWk0NSrkKQW60fNW7RRZhkQcv_wuPBQ",
+    authDomain: "peopleinfo-f612b.firebaseapp.com",
+    projectId: "peopleinfo-f612b",
+    storageBucket: "peopleinfo-f612b.appspot.com",
+    messagingSenderId: "59789335010",
+    appId: "1:59789335010:web:83d37179ef33749ffcc1bb",
+    measurementId: "G-4Y1N200P61"
   };
 
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
   
   import {getDatabase, set, get, update, remove, ref, child}
-  from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
+  from "hhttps://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
 
  const db = getDatabase();
 
