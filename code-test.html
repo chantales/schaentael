@@ -117,7 +117,7 @@
     <input id="enterAmount" type="number"> 
 
     <h4>What colour?</h4> 
-    <input id="enterColourr" type="text"> 
+    <input id="enterColour" type="text"> 
 
     <button id="insert">INSERT</button>
 
@@ -159,7 +159,7 @@
         var insertBtn = document.querySelector("#insert");
 
         function InsertData() {
-            set(ref(db, "Details/"+ enterProductvalue), {
+            set(ref(db, "Details/"+ enterProduct.value), {
                 Email: enterEmail.value,
                 Deliver: enterDeliver.value,
                 Product: enterProduct.value,
