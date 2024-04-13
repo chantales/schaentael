@@ -227,13 +227,13 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 
 
         if (selectedProduct === 'photoHolderSimple') {
-            priceTotal.dataset.price = 7;
+            priceTotal.textContent = 7;
         } else if (selectedProduct === 'photoHolderDeco') {
-            priceTotal.dataset.price = 8;
+            priceTotal.textContent = 8;
         } else if (selectedProduct === 'crochetBow') {
-            priceTotal.dataset.price = 100;
+            priceTotal.textContent = 100;
         } else {
-            priceTotal.dataset.price = 0;
+            priceTotal.textContent = 0;
         }
       
         colourDropD.innerHTML = '';
