@@ -169,6 +169,21 @@
         var enterAmount = document.querySelector("#enterAmount");
         var productDropdown = document.getElementById('productDropD');
         var colourDropD = document.getElementById('colourDropD');
+     
+     
+    document.getElementById('productDropD').addEventListener('change', function() {
+    console.log("Product dropdown selection changed");
+    var selectedProduct = productDropdown.value;
+    console.log("Selected Product:", selectedProduct);
+});
+
+document.getElementById('colourDropD').addEventListener('change', function() {
+    console.log("Colour dropdown selection changed");
+    var selectedColour = colourDropD.value;
+    console.log("Selected Colour:", selectedColour);
+});
+
+  
         var insertBtn = document.querySelector("#insert");
 
         function InsertData() {
