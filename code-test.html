@@ -267,11 +267,22 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     priceTotal.textContent = "$" + totalPrice.toFixed(2);
     }
 
-    handleProductDropdownChange();
+
+
+
+    document.getElementById('productDropD').addEventListener('change', function() {
+    console.log("Product dropdown selection changed");
+    handleProductDropdownChange(); // Manually call the function to check if it works
+    
+
+
+
+
+
     document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
     document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
     document.getElementById('enterAmount').addEventListener('input', updateTotalPrice);
-  });
+  })});
 
 </script>
 </body>
