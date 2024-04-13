@@ -186,6 +186,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     function InsertData() {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
+    var priceTotal = document.getElementById('priceTotal')
     var totalCost = parseFloat(enterAmount.value) * parseFloat(priceTotal.dataset.price) || 0
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
