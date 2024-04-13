@@ -236,6 +236,7 @@ let basePrice = 0;
 
   var basePrice = basePriceMap[selectedProduct] || 0;
   priceTotal.textContent = "$" + basePrice;
+  console.log("Base Price:", basePrice);
 
         updateTotalPrice();
         populateColourDropdown(selectedProduct);
