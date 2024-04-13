@@ -162,7 +162,6 @@
   from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
 
  const db = getDatabase();
-
         var enterName = document.querySelector("#enterName");
         var enterEmail = document.querySelector("#enterEmail");
         var enterDeliver = document.querySelector("#enterDeliver");
@@ -190,6 +189,7 @@
 
         insertBtn.addEventListener('click', InsertData);
 
+document.addEventListener('DOMContentLoaded', function() {
   const productColourMap = {
   'photoHolderSimple': ['green', 'pink', 'blue'],
   'photoHolderDeco': ['bear', 'bunny'],
@@ -230,6 +230,7 @@ function handleColourDropdownChange() {
 handleProductDropdownChange();
 document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
 document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
+});
 
 </script>
 </body>
