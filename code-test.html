@@ -184,7 +184,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var insertBtn = document.querySelector("#insert");
     insertBtn.addEventListener('click', InsertData);
 
-    function InsertData() {
+    function InsertData(basePrice) {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
     var priceTotal = document.getElementById('priceTotal')
@@ -193,6 +193,8 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     console.log("Selected Colour:", selectedColour);
     console.log("Total Cost:", totalCost);
 
+    InsertData(basePrice);
+    
         set(ref(db, "Details/"+ enterName.value), {
                 Name:enterName.value,
                 Email: enterEmail.value,
