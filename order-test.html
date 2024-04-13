@@ -127,103 +127,145 @@
 
 </div>
 <script type="module">
- // Import the functions you need from the SDKs you need
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyAI2ataYlzvmEfuQry6XLqz0qN7QhfvbIs",
-    authDomain: "peopleorder-3f1f4.firebaseapp.com",
-    databaseURL: "https://peopleorder-3f1f4-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "peopleorder-3f1f4",
-    storageBucket: "peopleorder-3f1f4.appspot.com",
-    messagingSenderId: "96953007204",
-    appId: "1:96953007204:web:558aae69099be63528b371"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  
-  import {getDatabase, set, get, update, remove, ref, child}
-  from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
-
- const db = getDatabase();
-
-        var enterID = document.querySelector("#enterID");
-        var enterName = document.querySelector("#enterName");
-        var enterAge = document.querySelector("#enterAge");
-        var findID = document.querySelector("#findID");
-        var findName = document.querySelector("#findName");
-        var findAge = document.querySelector("#findAge");
-      
-
-        var insertBtn = document.querySelector("#insert");
-        var updateBtn = document.querySelector("#update");
-        var removeBtn = document.querySelector("#remove");
-        var findBtn = document.querySelector("#find");
-
-        function InsertData() {
-            set(ref(db, "People/"+ enterID.value), {
-                Name: enterName.value,
-                ID: enterID.value,
-                Age: enterAge.value
-            })
-            .then(()=>{
-                 alert("Data added successfully");
-            })
-            .catch((error)=>{
-                alert(error);
-            });
-        }
-
-        function FindData() {
-            const dbref = ref (db);
-
-            get(child(dbref, "People/" + findID.value))
-            .then((snapshot)=>{
-                if(snapshot.exists()){
-                    findName.innerHTML = "Name: " + snapshot.val().Name;
-                    findAge.innerHTML = "Age: " + snapshot.val().Age;
-                } else {
-                    alert("No data found");
-                }
-            })
-            .catch((error)=>{
-                alert(error)
-            })
-            
-        }
-
-        function UpdateData(){
-            update(ref(db, "People/"+ enterID.value),{
-                Name: enterName.value,
-                Age: enterAge.value
-            })
-            .then(()=>{
-                alert("Data updated successfully");
-            })
-            .catch((error)=>{
-                alert(error);
-            });
-        }
-
-        function RemoveData(){
-            remove(ref(db, "People/"+ enterID.value))
-            .then(()=>{
-                alert("Data deleted successfully");
-            })
-            .catch((error)=>{
-                alert(error);
-            });
-        }
-
-        insertBtn.addEventListener('click', InsertData);
-        updateBtn.addEventListener('click', UpdateData);
-        removeBtn.addEventListener('click', RemoveData);
-        findBtn.addEventListener('click', FindData);
-
-</script>
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+   // TODO: Add SDKs for Firebase products that you want to use
+   // https://firebase.google.com/docs/web/setup#available-libraries
+ 
+   // Your web app's Firebase configuration
+   const firebaseConfig = {
+     apiKey: "AIzaSyAI2ataYlzvmEfuQry6XLqz0qN7QhfvbIs",
+     authDomain: "peopleorder-3f1f4.firebaseapp.com",
+     databaseURL: "https://peopleorder-3f1f4-default-rtdb.asia-southeast1.firebasedatabase.app",
+     projectId: "peopleorder-3f1f4",
+     storageBucket: "peopleorder-3f1f4.appspot.com",
+     messagingSenderId: "96953007204",
+     appId: "1:96953007204:web:558aae69099be63528b371"
+   };
+ 
+   // Initialize Firebase
+   const app = initializeApp(firebaseConfig);
+   
+   import {getDatabase, set, ref, child}
+   from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
+ 
+   document.addEventListener('DOMContentLoaded', function() {
+   const db = getDatabase();
+         var enterName = document.querySelector("#enterName");
+         var enterEmail = document.querySelector("#enterEmail");
+         var enterDeliver = document.querySelector("#enterDeliver");
+         var enterAmount = document.querySelector("#enterAmount");
+         var productDropdown = document.getElementById('productDropD');
+         var colourDropD = document.getElementById('colourDropD');
+         var priceTotal = document.getElementById('priceTotal');
+ 
+    document.getElementById('productDropD').addEventListener('change', function() {
+     console.log("Product dropdown selection changed");
+     var selectedProduct = productDropdown.value;
+     console.log("Selected Product:", selectedProduct);
+ });
+ 
+ document.getElementById('colourDropD').addEventListener('change', function() {
+     var selectedColour = colourDropD.value;
+ });
+   
+     var insertBtn = document.querySelector("#insert");
+     insertBtn.addEventListener('click', InsertData);
+ 
+     function InsertData() {
+     var selectedProduct = productDropdown.value;
+     var selectedColour = colourDropD.value;
+     var priceTotal = document.getElementById('priceTotal')
+     var totalCost = parseInt(enterAmount.value) * parseFloat(priceTotal.textContent) || 0
+     console.log("Selected Product:", selectedProduct);
+     console.log("Selected Colour:", selectedColour);
+ 
+         set(ref(db, "Details/"+ enterName.value), {
+                 Name:enterName.value,
+                 Email: enterEmail.value,
+                 Deliver: enterDeliver.value,
+                 Amount: enterAmount.value,
+                 Product: selectedProduct,
+                 Colour: selectedColour,
+                 TotalCost: totalCost.toFixed(2),
+             })
+ 
+             .then(()=>{
+                  alert("Data added successfully");
+             })
+             .catch((error)=>{
+                 alert(error);
+             });
+           }
+ 
+     const productColourMap = {
+         'photoHolderSimple': ['green', 'pink', 'blue'],
+         'photoHolderDeco': ['bear', 'bunny'],
+         'crochetBow': ['red', 'pink']
+     };
+ 
+     function handleProductDropdownChange() {
+       console.log("Product dropdown selection changed");
+         var productDropdown = document.getElementById('productDropD');
+         var selectedProduct = productDropdown.value;
+         var colourDropD = document.getElementById('colourDropD');
+         var priceTotal = document.getElementById('priceTotal');
+ 
+     console.log("Selected Product:", selectedProduct);
+ 
+         if (selectedProduct === 'photoHolderSimple') {
+             priceTotal.textContent = "$7";
+         } else if (selectedProduct === 'photoHolderDeco') {
+             priceTotal.textContent = "$8";
+         } else if (selectedProduct === 'crochetBow') {
+             priceTotal.textContent = "$100";
+         } else {
+             priceTotal.textContent = "$0";
+         }
+ 
+         updateTotalPrice();
+         populateColourDropdown(selectedProduct);
+       }
+ 
+         function populateColourDropdown(selectedProduct) {
+           console.log("Populating colour dropdown for product:", selectedProduct);
+           var colourDropD = document.getElementById("colourDropD")
+           colourDropD.innerHTML = '';
+ 
+           if (selectedProduct && productColourMap[selectedProduct]) {
+         productColourMap[selectedProduct].forEach(colour => {
+             let option = document.createElement('option');
+             option.value = colour;
+             option.textContent = colour;
+             colourDropD.appendChild(option);
+         });
+     }
+ }
+ 
+     function handleColourDropdownChange() {
+       console.log("Colour dropdown selection changed");
+         var selectedColour = colourDropD.value;
+         console.log("Selected colour:", selectedColour);
+     }
+ 
+     function updateTotalPrice() {
+        console.log("Updating total price...");
+     var priceTotal = document.getElementById('priceTotal');
+     var enterAmount = document.querySelector("#enterAmount");
+     var totalAmount = parseInt(enterAmount.value) || 0;
+     var basePrice = parseFloat(priceTotal.textContent) || 0;
+         console.log("Total Amount:", totalAmount);
+         console.log("Base Price:", basePrice);
+     var totalPrice = totalAmount * basePrice;
+     priceTotal.textContent = "$" + totalPrice.toFixed(2);
+     }
+ 
+     handleProductDropdownChange(); 
+     document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
+     document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
+     document.getElementById('enterAmount').addEventListener('input', updateTotalPrice);
+   });
+ 
+ </script>
 </body>
 </html>

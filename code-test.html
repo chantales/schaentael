@@ -216,6 +216,12 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         'crochetBow': ['red', 'pink']
     };
 
+    const basePriceMap = {
+    'photoHolderSimple': 7,
+    'photoHolderDeco': 8,
+    'crochetBow': 100
+};
+
     function handleProductDropdownChange() {
       console.log("Product dropdown selection changed");
         var productDropdown = document.getElementById('productDropD');
@@ -225,15 +231,9 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 
     console.log("Selected Product:", selectedProduct);
 
-        if (selectedProduct === 'photoHolderSimple') {
-            priceTotal.textContent = "$7";
-        } else if (selectedProduct === 'photoHolderDeco') {
-            priceTotal.textContent = "$8";
-        } else if (selectedProduct === 'crochetBow') {
-            priceTotal.textContent = "$100";
-        } else {
-            priceTotal.textContent = "$0";
-        }
+
+  var basePrice = basePriceMap[selectedProduct] || 0;
+  priceTotal.textContent = "$" + basePrice;
 
         updateTotalPrice();
         populateColourDropdown(selectedProduct);
