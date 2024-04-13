@@ -127,8 +127,12 @@
     <h4>How many would you like?</h4> 
     <input id="enterAmount" type="number"> 
 
-<div class="priceTotal"></div>
+    <br>
+    <br>
 
+<div class="priceTotal"></div>
+<br>
+<br>
 <button id="insert">finish order</button>
 
 </div>
@@ -186,13 +190,11 @@
 
         insertBtn.addEventListener('click', InsertData);
 
-
   const productColourMap = {
   'photoHolderSimple': ['green', 'pink', 'blue'],
   'photoHolderDeco': ['bear', 'bunny'],
   'crochetBow': ['red', 'pink']
 };
-
 
 function handleProductDropdownChange() {
   var productDropdown = document.getElementById('productDropD');
@@ -225,6 +227,7 @@ function handleColourDropdownChange() {
   console.log("Selected colour:", selectedColour);
 }
 
+handleProductDropdownChange();
 document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
 document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
 
