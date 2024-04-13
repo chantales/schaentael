@@ -116,8 +116,12 @@
     <option value="photoHolderSimple">photocard holder (simple)</option>
     <option value="photoHolderDeco">photocard holder (decorated)</option>
     <option value="crochetBow">crochet bow</option>
-</select>   
-<input type="text" id="textbox" placeholder="Auto-filled text"> 
+</select>  
+
+<select id="colourDropD">
+  <option value="">colour!</option>
+</select>
+<input type="text" id="textbox" placeholder="waiting.."> 
 
 
 
@@ -185,36 +189,51 @@
         insertBtn.addEventListener('click', InsertData);
 
 
-        function handleDropdownChange() {
-  var dropdown = document.getElementById('dropdown');
-  var selectedOption = dropdown.value;
-  var textbox = document.getElementById('textbox');
-  var responseMessage = ""; // Initialize response message variable
+  function handleDropdownChange() {
+  var dropdown = document.getElementById('productDropD');
+  var selectedOption = productDropdown.value;
+  var textbox = document.getElementById('colourDropD');
+  var responseMessage = "";
   
-  // Switch statement to set response message based on selected option
-  switch(selectedOption) {
-    case 'option1':
-      responseMessage = "Response message for Option 1";
-      break;
-    case 'option2':
-      responseMessage = "Response message for Option 2";
-      break;
-    case 'option3':
-      responseMessage = "Response message for Option 3";
-      break;
-    default:
-      responseMessage = ""; // Clear response message if no option selected
+  colourDropD.innerHTML = '';
+  
+  // Create options for dropdown 2 based on selected product
+  if (selectedProduct === 'photoHolderSimple') {
+    colourDropD.innerHTML += '<option value="green">Green</option>';
+    colourDropD.innerHTML += '<option value="pink">Pink</option>';
+    colourDropD.innerHTML += '<option value="blue">Blue</option>';
+
+  } else if (selectedProduct === 'photoHolderDeco') {
+    colourDropD.innerHTML += '<option value="bear">Bear</option>';
+    colourDropD.innerHTML += '<option value="bunny">Bunny</option>';
+
+  } else if (selectedProduct === 'crochetBow') {
+    colourDropD.innerHTML += '<option value="red">Red</option>';
+    colourDropD.innerHTML += '<option value="pink">Pink</option>';
+
+
   }
   
-  // Update textbox with response message
-  textbox.value = responseMessage;
+  // Trigger change event on dropdown 2 to update textbox
+  colourDropD.dispatchEvent(new Event('change'));
 }
 
-// Add event listener to dropdown for change event
-document.getElementById('dropdown').addEventListener('change', handleDropdownChange);
+// Function to handle dropdown 2 change event
+function handleColourDropDChange() {
+  var colourDropD = document.getElementById('colourDropD');
+  var selectedColour = colourDropD.value;
+  var textbox = document.getElementById('textbox');
+  
+  // Update textbox with selected colour
+  textbox.value = "Selected colour: " + selectedColour;
+}
 
-// Add event listener to dropdown for change event
-document.getElementById('dropdown').addEventListener('change', handleDropdownChange);
+// Add event listeners to dropdowns for change events
+document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
+document.getElementById('colourDropD').addEventListener('change', handleColourDropDownChange);
+  
+
+
 
 </script>
 </body>
