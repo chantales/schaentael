@@ -188,7 +188,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
     var priceTotal = document.getElementById('priceTotal')
-    var totalCost = parseInt(enterAmount.value) * parseFloat(priceTotal.textContent) || 0
+    var totalCost = parseInt(enterAmount.value) * parseFloat(basePrice.value) || 0
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
 
@@ -266,7 +266,6 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var priceTotal = document.getElementById('priceTotal');
     var enterAmount = document.querySelector("#enterAmount");
     var totalAmount = parseInt(enterAmount.value) || 0;
-    var basePrice = parseFloat(priceTotal.textContent) || 0;
         console.log("Total Amount:", totalAmount);
         console.log("Base Price:", basePrice);
     var totalPrice = totalAmount * basePrice;
