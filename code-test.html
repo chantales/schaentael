@@ -225,14 +225,15 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     console.log("Selected Product:", selectedProduct);
 
         if (selectedProduct === 'photoHolderSimple') {
-            priceTotal.dataset.price = "$7";
+            priceTotal.dataset.price = "7";
         } else if (selectedProduct === 'photoHolderDeco') {
-            priceTotal.dataset.price = "$8";
+            priceTotal.dataset.price = "8";
         } else if (selectedProduct === 'crochetBow') {
-            priceTotal.dataset.price = "$100";
+            priceTotal.dataset.price = "100";
         } else {
-            priceTotal.dataset.price = "$0";
+            priceTotal.dataset.price = "0";
         }
+
         updateTotalPrice();
         populateColourDropdown(selectedProduct);
 
