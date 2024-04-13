@@ -184,53 +184,41 @@
 
         insertBtn.addEventListener('click', InsertData);
 
+        const productColourMap = {
+  'photoHolderSimple': ['green', 'pink', 'blue'],
+  'photoHolderDeco': ['bear', 'bunny'],
+  'crochetBow': ['red', 'pink']
+};
 
-  function handleDropdownChange() {
-  var dropdown = document.getElementById('productDropD');
-  var selectedOption = productDropdown.value;
-  var textbox = document.getElementById('colourDropD');
-  var responseMessage = "";
+// Function to handle product dropdown change event
+function handleProductDropdownChange() {
+  var productDropdown = document.getElementById('productDropD');
+  var selectedProduct = productDropdown.value;
+  var colourDropD = document.getElementById('colourDropD');
   
+  // Clear existing options in colour dropdown
   colourDropD.innerHTML = '';
   
-  // Create options for dropdown 2 based on selected product
-  if (selectedProduct === 'photoHolderSimple') {
-    colourDropD.innerHTML += '<option value="green">Green</option>';
-    colourDropD.innerHTML += '<option value="pink">Pink</option>';
-    colourDropD.innerHTML += '<option value="blue">Blue</option>';
-
-  } else if (selectedProduct === 'photoHolderDeco') {
-    colourDropD.innerHTML += '<option value="bear">Bear</option>';
-    colourDropD.innerHTML += '<option value="bunny">Bunny</option>';
-
-  } else if (selectedProduct === 'crochetBow') {
-    colourDropD.innerHTML += '<option value="red">Red</option>';
-    colourDropD.innerHTML += '<option value="pink">Pink</option>';
-
-
+  // Populate colour dropdown based on selected product
+  if (selectedProduct && productColourMap[selectedProduct]) {
+    productColourMap[selectedProduct].forEach(colour => {
+      colourDropD.innerHTML += `<option value="${colour}">${colour}</option>`;
+    });
   }
-  
-  // Trigger change event on dropdown 2 to update textbox
-  colourDropD.dispatchEvent(new Event('change'));
 }
 
-// Function to handle dropdown 2 change event
-function handleColourDropDChange() {
+// Function to handle colour dropdown change event
+function handleColourDropdownChange() {
   var colourDropD = document.getElementById('colourDropD');
   var selectedColour = colourDropD.value;
-  var textbox = document.getElementById('textbox');
-  
-  // Update textbox with selected colour
-  textbox.value = "Selected colour: " + selectedColour;
+  console.log("Selected colour:", selectedColour);
 }
 
-// Add event listeners to dropdowns for change events
-document.getElementById('productDropD').addEventListener('change', handleDropdownChange);
-document.getElementById('colourDropD').addEventListener('change', handleColourDropDChange);
+// Add event listener to product dropdown for change event
+document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
 
-  
-
-
+// Add event listener to colour dropdown for change event
+document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
 
 </script>
 </body>
