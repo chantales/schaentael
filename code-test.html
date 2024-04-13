@@ -166,16 +166,15 @@
         var enterName = document.querySelector("#enterName");
         var enterEmail = document.querySelector("#enterEmail");
         var enterDeliver = document.querySelector("#enterDeliver");
-        var enterProduct = document.querySelector("#enterProduct");
         var enterAmount = document.querySelector("#enterAmount");
       
         var insertBtn = document.querySelector("#insert");
 
         function InsertData() {
             set(ref(db, "Details/"+ enterProduct.value), {
+                Name:enterName.value,
                 Email: enterEmail.value,
                 Deliver: enterDeliver.value,
-                Product: enterProduct.value,
                 Amount: enterAmount.value,
             })
             .then(()=>{
