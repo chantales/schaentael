@@ -188,7 +188,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
     var priceTotal = document.getElementById('priceTotal')
-    var totalCost = parseFloat(enterAmount.value) * parseFloat(priceTotal.dataset.price) || 0
+    var totalCost = parseInt(enterAmount.value) * parseFloat(priceTotal.textContent) || 0
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
 
@@ -226,13 +226,13 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     console.log("Selected Product:", selectedProduct);
 
         if (selectedProduct === 'photoHolderSimple') {
-            priceTotal.dataset.price = "$7";
+            priceTotal.textContent = "$7";
         } else if (selectedProduct === 'photoHolderDeco') {
-            priceTotal.dataset.price = "$8";
+            priceTotal.textContent = "$8";
         } else if (selectedProduct === 'crochetBow') {
-            priceTotal.dataset.price = "$100";
+            priceTotal.textContent = "$100";
         } else {
-            priceTotal.dataset.price = "$0";
+            priceTotal.textContent = "$0";
         }
 
         updateTotalPrice();
@@ -263,11 +263,11 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var priceTotal = document.getElementById('priceTotal');
     var enterAmount = document.querySelector("#enterAmount");
     var totalAmount = parseInt(enterAmount.value) || 0;
-    var basePrice = parseFloat(priceTotal.dataset.price) || 0;
+    var basePrice = parseFloat(priceTotal.textContent) || 0;
         console.log("Total Amount:", totalAmount);
         console.log("Base Price:", basePrice);
     var totalPrice = totalAmount * basePrice;
-    priceTotal.dataset.price = "$" + totalPrice.toFixed(2);
+    priceTotal.textContent = "$" + totalPrice.toFixed(2);
     }
 
     handleProductDropdownChange(); 
