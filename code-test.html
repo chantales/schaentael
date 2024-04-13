@@ -129,7 +129,7 @@
 
 <div class="priceTotal"></div>
 
-    <button id="insert">finish order</button>
+<button id="insert">finish order</button>
 
 </div>
 
@@ -201,13 +201,13 @@ function handleProductDropdownChange() {
   var priceTotal = document.getElementById('priceTotal');
 
   if (selectedProduct === 'photoHolderSimple') {
-    congratsMessage.textContent = "$7";
+    priceTotal.textContent = "$7";
   } else if (selectedProduct === 'photoHolderDeco') {
-    congratsMessage.textContent = "$8";
+    priceTotal.textContent = "$8";
   } else if (selectedProduct === 'crochetBow') {
-    congratsMessage.textContent = "...";
+    priceTotal.textContent = "...";
   } else {
-    congratsMessage.textContent = "";
+    priceTotal.textContent = "";
   }
 
   colourDropD.innerHTML = '';
