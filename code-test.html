@@ -161,6 +161,7 @@
   import {getDatabase, set, ref, child}
   from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
 
+  document.addEventListener('DOMContentLoaded', function() {
  const db = getDatabase();
         var enterName = document.querySelector("#enterName");
         var enterEmail = document.querySelector("#enterEmail");
@@ -189,7 +190,6 @@
 
         insertBtn.addEventListener('click', InsertData);
 
-        document.addEventListener('DOMContentLoaded', function() {
 
     const productColourMap = {
         'photoHolderSimple': ['green', 'pink', 'blue'],
