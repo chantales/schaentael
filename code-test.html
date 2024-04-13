@@ -110,6 +110,7 @@
     <h4>how would you like it delivered?</h4> 
     <input id="enterDeliver" type="text"> 
 
+    <br>
 <select id="productDropD">
     <option value="">product list</option>
     <option value="photoHolderSimple">photocard holder (simple)</option>
@@ -117,6 +118,8 @@
     <option value="crochetBow">crochet bow</option>
 </select>   
 <input type="text" id="textbox" placeholder="Auto-filled text"> 
+
+
 
     <h4>How many would you like?</h4> 
     <input id="enterAmount" type="number"> 
@@ -186,22 +189,29 @@
   var dropdown = document.getElementById('dropdown');
   var selectedOption = dropdown.value;
   var textbox = document.getElementById('textbox');
+  var responseMessage = ""; // Initialize response message variable
   
-  // Switch statement to fill textbox based on selected option
+  // Switch statement to set response message based on selected option
   switch(selectedOption) {
     case 'option1':
-      textbox.value = "Option 1 selected";
+      responseMessage = "Response message for Option 1";
       break;
     case 'option2':
-      textbox.value = "Option 2 selected";
+      responseMessage = "Response message for Option 2";
       break;
     case 'option3':
-      textbox.value = "Option 3 selected";
+      responseMessage = "Response message for Option 3";
       break;
     default:
-      textbox.value = ""; // Clear textbox if no option selected
+      responseMessage = ""; // Clear response message if no option selected
   }
+  
+  // Update textbox with response message
+  textbox.value = responseMessage;
 }
+
+// Add event listener to dropdown for change event
+document.getElementById('dropdown').addEventListener('change', handleDropdownChange);
 
 // Add event listener to dropdown for change event
 document.getElementById('dropdown').addEventListener('change', handleDropdownChange);
