@@ -178,17 +178,15 @@
 });
 
 document.getElementById('colourDropD').addEventListener('change', function() {
-    console.log("Colour dropdown selection changed");
     var selectedColour = colourDropD.value;
-    console.log("Selected Colour:", selectedColour);
 });
-
   
-        var insertBtn = document.querySelector("#insert");
+    var insertBtn = document.querySelector("#insert");
 
-        function InsertData() {
+    function InsertData() {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
+    var priceTotal = document.getElementById('priceTotal').textContent;
     var totalCost = parseFloat(enterAmount.value) * parseFloat(priceTotal.textContent.replace('$', ''));
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
