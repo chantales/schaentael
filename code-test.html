@@ -227,15 +227,16 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 
 
         if (selectedProduct === 'photoHolderSimple') {
-            priceTotal.textContent = "$7";
+            priceTotal.dataset.price = "$7";
         } else if (selectedProduct === 'photoHolderDeco') {
-            priceTotal.textContent = "$8";
+            priceTotal.dataset.price = "$8";
         } else if (selectedProduct === 'crochetBow') {
-            priceTotal.textContent = "...";
+            priceTotal.dataset.price = "...";
         } else {
-            priceTotal.textContent = "";
+            priceTotal.dataset.price = "";
         }
-
+        
+        var colourDropD = document.getElementById('colourDropD');
         colourDropD.innerHTML = '';
 
         if (selectedProduct && productColourMap[selectedProduct]) {
@@ -246,6 +247,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
                 colourDropD.appendChild(option);
             });
         }
+        updateTotalPrice();
     }
 
     function handleColourDropdownChange() {
@@ -254,10 +256,20 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         console.log("Selected colour:", selectedColour);
     }
 
+    function updateTotalPrice() {
+    var priceTotal = document.getElementById('priceTotal');
+    var enterAmount = document.querySelector("#enterAmount");
+    var totalAmount = parseInt(enterAmount.value) || 0;
+    var basePrice = parseFloat(priceTotal.dataset.price) || 0;
+    var totalPrice = totalAmount * basePrice;
+    priceTotal.textContent = "$" + totalPrice.toFixed(2);
+    }
+
     handleProductDropdownChange();
     document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
     document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
-});
+    document.getElementById('enterAmount').addEventListener('input', updateTotalPrice);
+  });
 
 </script>
 </body>
