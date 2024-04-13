@@ -189,49 +189,50 @@
 
         insertBtn.addEventListener('click', InsertData);
 
-document.addEventListener('DOMContentLoaded', function() {
-  const productColourMap = {
-  'photoHolderSimple': ['green', 'pink', 'blue'],
-  'photoHolderDeco': ['bear', 'bunny'],
-  'crochetBow': ['red', 'pink']
-};
+        document.addEventListener('DOMContentLoaded', function() {
+    const productColourMap = {
+        'photoHolderSimple': ['green', 'pink', 'blue'],
+        'photoHolderDeco': ['bear', 'bunny'],
+        'crochetBow': ['red', 'pink']
+    };
 
-function handleProductDropdownChange(){ 
-  var productDropdown = document.getElementById('productDropD');
-  var selectedProduct = productDropdown.value;
-  var colourDropD = document.getElementById('colourDropD');
-  var priceTotal = document.getElementById('priceTotal');
+    function handleProductDropdownChange() {
+        var productDropdown = document.getElementById('productDropD');
+        var selectedProduct = productDropdown.value;
+        var colourDropD = document.getElementById('colourDropD');
+        var priceTotal = document.getElementById('priceTotal');
 
-  if (selectedProduct === 'photoHolderSimple') {
-    priceTotal.textContent = "$7";
-  } else if (selectedProduct === 'photoHolderDeco') {
-    priceTotal.textContent = "$8";
-  } else if (selectedProduct === 'crochetBow') {
-    priceTotal.textContent = "...";
-  } else {
-    priceTotal.textContent = "";
-  }
+        if (selectedProduct === 'photoHolderSimple') {
+            priceTotal.textContent = "$7";
+        } else if (selectedProduct === 'photoHolderDeco') {
+            priceTotal.textContent = "$8";
+        } else if (selectedProduct === 'crochetBow') {
+            priceTotal.textContent = "...";
+        } else {
+            priceTotal.textContent = "";
+        }
 
-  colourDropD.innerHTML = '';
-  
-  if (selectedProduct && productColourMap[selectedProduct]) {
-    productColourMap[selectedProduct].forEach(colour => {
-        let option = document.createElement('option');
-        option.value = colour;
-        option.textContent = colour;
-        colourDropD.appendChild(option);
-    });
-}
+        colourDropD.innerHTML = '';
 
-function handleColourDropdownChange() {
-  var colourDropD = document.getElementById('colourDropD');
-  var selectedColour = colourDropD.value;
-  console.log("Selected colour:", selectedColour);
-}
+        if (selectedProduct && productColourMap[selectedProduct]) {
+            productColourMap[selectedProduct].forEach(colour => {
+                let option = document.createElement('option');
+                option.value = colour;
+                option.textContent = colour;
+                colourDropD.appendChild(option);
+            });
+        }
+    }
 
-handleProductDropdownChange();
-document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
-document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
+    function handleColourDropdownChange() {
+        var colourDropD = document.getElementById('colourDropD');
+        var selectedColour = colourDropD.value;
+        console.log("Selected colour:", selectedColour);
+    }
+
+    handleProductDropdownChange();
+    document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
+    document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
 });
 
 </script>
