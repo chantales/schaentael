@@ -169,9 +169,9 @@
         var enterAmount = document.querySelector("#enterAmount");
         var productDropdown = document.getElementById('productDropD');
         var colourDropD = document.getElementById('colourDropD');
-     
-     
-    document.getElementById('productDropD').addEventListener('change', function() {
+        var priceTotal = document.getElementById('priceTotal');
+
+   document.getElementById('productDropD').addEventListener('change', function() {
     console.log("Product dropdown selection changed");
     var selectedProduct = productDropdown.value;
     console.log("Selected Product:", selectedProduct);
@@ -189,7 +189,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         function InsertData() {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
-
+    var totalCost = parseFloat(enterAmount.value) * parseFloat(priceTotal.textContent.replace('$', ''));
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
 
@@ -200,6 +200,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
                 Amount: enterAmount.value,
                 Product: selectedProduct,
                 Colour: selectedColour,
+                TotalCost: totalCost.toFixed(2),
             })
 
             .then(()=>{
