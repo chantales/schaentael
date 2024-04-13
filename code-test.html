@@ -227,16 +227,15 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 
 
         if (selectedProduct === 'photoHolderSimple') {
-            priceTotal.dataset.price = "$7";
+            priceTotal.dataset.price = 7;
         } else if (selectedProduct === 'photoHolderDeco') {
-            priceTotal.dataset.price = "$8";
+            priceTotal.dataset.price = 8;
         } else if (selectedProduct === 'crochetBow') {
-            priceTotal.dataset.price = "...";
+            priceTotal.dataset.price = 100;
         } else {
-            priceTotal.dataset.price = "";
+            priceTotal.dataset.price = 0;
         }
-        
-        var colourDropD = document.getElementById('colourDropD');
+      
         colourDropD.innerHTML = '';
 
         if (selectedProduct && productColourMap[selectedProduct]) {
