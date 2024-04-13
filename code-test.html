@@ -188,13 +188,13 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
     var priceTotal = document.getElementById('priceTotal')
-    var totalCost = parseInt(enterAmount.value) * parseFloat(basePrice) || 0
+    var totalPrice = totalAmount * basePrice;
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
     console.log("Total Cost:", totalCost);
 
     InsertData(basePrice);
-    
+
         set(ref(db, "Details/"+ enterName.value), {
                 Name:enterName.value,
                 Email: enterEmail.value,
@@ -202,7 +202,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
                 Amount: enterAmount.value,
                 Product: selectedProduct,
                 Colour: selectedColour,
-                TotalCost: totalCost.toFixed(2),
+                TotalPricet: totalPrice.toFixed(2),
             })
 
             .then(()=>{
