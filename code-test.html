@@ -167,15 +167,22 @@
         var enterEmail = document.querySelector("#enterEmail");
         var enterDeliver = document.querySelector("#enterDeliver");
         var enterAmount = document.querySelector("#enterAmount");
+        var productDropdown = document.getElementById('productDropD');
+        var colourDropD = document.getElementById('colourDropD');
       
+
+    var selectedProduct = productDropdown.value;
+    var selectedColour = colourDropD.value;
         var insertBtn = document.querySelector("#insert");
 
         function InsertData() {
-            set(ref(db, "Details/"+ enterName.value), {
+        set(ref(db, "Details/"+ enterName.value), {
                 Name:enterName.value,
                 Email: enterEmail.value,
                 Deliver: enterDeliver.value,
                 Amount: enterAmount.value,
+                Product: selectedProduct,
+                Colour: selectedColour
             })
 
             .then(()=>{
