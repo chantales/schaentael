@@ -234,6 +234,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 
   var basePrice = basePriceMap[selectedProduct] || 0;
   priceTotal.textContent = "$" + basePrice;
+  priceTotal.dataset.basePrice = basePrice;
   console.log("Base Price:", basePrice);
 
         updateTotalPrice();
@@ -267,6 +268,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var priceTotal = document.getElementById('priceTotal');
     var enterAmount = document.querySelector("#enterAmount");
     var totalAmount = parseInt(enterAmount.value) || 0;
+    var basePrice = parseFloat(priceTotal.dataset.basePrice) || 0;
         console.log("Total Amount:", totalAmount);
         console.log("Base Price:", basePrice);
     var totalPrice = totalAmount * basePrice;
