@@ -227,14 +227,15 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 
 
         if (selectedProduct === 'photoHolderSimple') {
-            priceTotal.textContent = 7;
+            priceTotal.textContent = "$7";
         } else if (selectedProduct === 'photoHolderDeco') {
-            priceTotal.textContent = 8;
+            priceTotal.textContent = "$8";
         } else if (selectedProduct === 'crochetBow') {
-            priceTotal.textContent = 100;
+            priceTotal.textContent = "$100";
         } else {
-            priceTotal.textContent = 0;
+            priceTotal.textContent = "$0";
         }
+        updateTotalPrice();
       
         colourDropD.innerHTML = '';
 
@@ -246,7 +247,6 @@ document.getElementById('colourDropD').addEventListener('change', function() {
                 colourDropD.appendChild(option);
             });
         }
-        updateTotalPrice();
     }
 
     function handleColourDropdownChange() {
@@ -256,6 +256,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     }
 
     function updateTotalPrice() {
+       console.log("Updating total price...");
     var priceTotal = document.getElementById('priceTotal');
     var enterAmount = document.querySelector("#enterAmount");
     var totalAmount = parseInt(enterAmount.value) || 0;
