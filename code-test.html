@@ -240,14 +240,14 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         function populateColourDropdown(selectedProduct) {
         colourDropD.innerHTML = '';
         if (selectedProduct && productColourMap[selectedProduct]) {
-            productColourMap[selectedProduct].forEach(colour => {
-                let option = document.createElement('option');
-                option.value = colour;
-                option.textContent = colour;
-                colourDropD.appendChild(option);
-            });
-        }
+        productColourMap[selectedProduct].forEach(colour => {
+            let option = document.createElement('option');
+            option.value = colour;
+            option.textContent = colour;
+            colourDropD.appendChild(option);
+        });
     }
+}
 
     function handleColourDropdownChange() {
         var colourDropD = document.getElementById('colourDropD');
