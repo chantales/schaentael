@@ -182,6 +182,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 });
   
     var insertBtn = document.querySelector("#insert");
+    insertBtn.addEventListener('click', InsertData);
 
     function InsertData() {
     var selectedProduct = productDropdown.value;
@@ -207,10 +208,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
             .catch((error)=>{
                 alert(error);
             });
-      }
-
-        insertBtn.addEventListener('click', InsertData);
-
+          }
 
     const productColourMap = {
         'photoHolderSimple': ['green', 'pink', 'blue'],
@@ -236,9 +234,10 @@ document.getElementById('colourDropD').addEventListener('change', function() {
             priceTotal.dataset.price = "$0";
         }
         updateTotalPrice();
-      
-        colourDropD.innerHTML = '';
+        populateColourDropdown(selectedProduct);
 
+        function populateColourDropdown(selectedProduct) {
+        colourDropD.innerHTML = '';
         if (selectedProduct && productColourMap[selectedProduct]) {
             productColourMap[selectedProduct].forEach(colour => {
                 let option = document.createElement('option');
@@ -271,7 +270,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
     document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
     document.getElementById('enterAmount').addEventListener('input', updateTotalPrice);
-  });
+  }});
 
 </script>
 </body>
