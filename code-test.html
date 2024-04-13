@@ -130,7 +130,7 @@
     <br>
     <br>
 
-<div value="priceTotal"></div>
+<div id="priceTotal"></div>
 <br>
 <br>
 <button id="insert">finish order</button>
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function() {
   'crochetBow': ['red', 'pink']
 };
 
-function handleProductDropdownChange() {
+function handleProductDropdownChange(){ 
   var productDropdown = document.getElementById('productDropD');
   var selectedProduct = productDropdown.value;
   var colourDropD = document.getElementById('colourDropD');
