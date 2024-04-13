@@ -111,6 +111,7 @@
     <input id="enterDeliver" type="text"> 
 
     <br>
+  <h4>Pick your product</h4>
 <select id="productDropD">
     <option value="">product list</option>
     <option value="photoHolderSimple">photocard holder (simple)</option>
@@ -118,18 +119,13 @@
     <option value="crochetBow">crochet bow</option>
 </select>  
 
+<h4>what colour?</h4>
 <select id="colourDropD">
   <option value="">colour!</option>
-</select>
-<input type="text" id="textbox" placeholder="waiting.."> 
-
-
+</select> 
 
     <h4>How many would you like?</h4> 
     <input id="enterAmount" type="number"> 
-
-    <h4>What colour?</h4> 
-    <input id="enterColour" type="text"> 
 
     <button id="insert">INSERT</button>
 
@@ -229,8 +225,9 @@ function handleColourDropDChange() {
 }
 
 // Add event listeners to dropdowns for change events
-document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
-document.getElementById('colourDropD').addEventListener('change', handleColourDropDownChange);
+document.getElementById('productDropD').addEventListener('change', handleDropdownChange);
+document.getElementById('colourDropD').addEventListener('change', handleColourDropDChange);
+
   
 
 
