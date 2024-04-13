@@ -223,8 +223,8 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         var selectedProduct = productDropdown.value;
         var colourDropD = document.getElementById('colourDropD');
         var priceTotal = document.getElementById('priceTotal');
-    console.log("Product dropdown selection changed");
 
+    console.log("Selected Product:", selectedProduct);
 
         if (selectedProduct === 'photoHolderSimple') {
             priceTotal.textContent = "$7";
