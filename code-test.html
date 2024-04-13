@@ -216,9 +216,11 @@ function handleProductDropdownChange(){
   
   if (selectedProduct && productColourMap[selectedProduct]) {
     productColourMap[selectedProduct].forEach(colour => {
-      colourDropD.innerHTML += `<option value="${colour}">${colour}</option>`;
+        let option = document.createElement('option');
+        option.value = colour;
+        option.textContent = colour;
+        colourDropD.appendChild(option);
     });
-  }
 }
 
 function handleColourDropdownChange() {
