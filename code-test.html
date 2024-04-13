@@ -259,7 +259,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var priceTotal = document.getElementById('priceTotal');
     var enterAmount = document.querySelector("#enterAmount");
     var totalAmount = parseInt(enterAmount.value) || 0;
-    var basePrice = parseFloat(priceTotal.dataset.price) || 0;
+    var basePrice = parseFloat(priceTotal.textContent) || 0;
     var totalPrice = totalAmount * basePrice;
     priceTotal.textContent = "$" + totalPrice.toFixed(2);
     }
