@@ -171,12 +171,13 @@
         var insertBtn = document.querySelector("#insert");
 
         function InsertData() {
-            set(ref(db, "Details/"+ enterProduct.value), {
+            set(ref(db, "Details/"+ enterName.value), {
                 Name:enterName.value,
                 Email: enterEmail.value,
                 Deliver: enterDeliver.value,
                 Amount: enterAmount.value,
             })
+
             .then(()=>{
                  alert("Data added successfully");
             })
