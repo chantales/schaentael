@@ -217,6 +217,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     };
 
     function handleProductDropdownChange() {
+      console.log("Product dropdown selection changed");
         var productDropdown = document.getElementById('productDropD');
         var selectedProduct = productDropdown.value;
         var colourDropD = document.getElementById('colourDropD');
@@ -236,9 +237,10 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 
         updateTotalPrice();
         populateColourDropdown(selectedProduct);
+        colourDropD.innerHTML = '';
 
         function populateColourDropdown(selectedProduct) {
-        colourDropD.innerHTML = '';
+          console.log("Populating colour dropdown for product:", selectedProduct);
         if (selectedProduct && productColourMap[selectedProduct]) {
         productColourMap[selectedProduct].forEach(colour => {
             let option = document.createElement('option');
@@ -250,6 +252,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
 }
 
     function handleColourDropdownChange() {
+      console.log("Colour dropdown selection changed");
         var colourDropD = document.getElementById('colourDropD');
         var selectedColour = colourDropD.value;
         console.log("Selected colour:", selectedColour);
@@ -264,7 +267,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         console.log("Total Amount:", totalAmount);
         console.log("Base Price:", basePrice);
     var totalPrice = totalAmount * basePrice;
-    priceTotal.textContent = "$" + totalPrice.toFixed(2);
+    priceTotal.dataset.price = "$" + totalPrice.toFixed(2);
     }
 
     handleProductDropdownChange(); 
