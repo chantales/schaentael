@@ -127,7 +127,9 @@
     <h4>How many would you like?</h4> 
     <input id="enterAmount" type="number"> 
 
-    <button id="insert">INSERT</button>
+<div class="priceTotal"></div>
+
+    <button id="insert">finish order</button>
 
 </div>
 
@@ -184,23 +186,32 @@
 
         insertBtn.addEventListener('click', InsertData);
 
-        
-        const productColourMap = {
+
+  const productColourMap = {
   'photoHolderSimple': ['green', 'pink', 'blue'],
   'photoHolderDeco': ['bear', 'bunny'],
   'crochetBow': ['red', 'pink']
 };
 
-// Function to handle product dropdown change event
+
 function handleProductDropdownChange() {
   var productDropdown = document.getElementById('productDropD');
   var selectedProduct = productDropdown.value;
   var colourDropD = document.getElementById('colourDropD');
-  
-  // Clear existing options in colour dropdown
+  var priceTotal = document.getElementById('priceTotal');
+
+  if (selectedProduct === 'photoHolderSimple') {
+    congratsMessage.textContent = "$7";
+  } else if (selectedProduct === 'photoHolderDeco') {
+    congratsMessage.textContent = "$8";
+  } else if (selectedProduct === 'crochetBow') {
+    congratsMessage.textContent = "...";
+  } else {
+    congratsMessage.textContent = "";
+  }
+
   colourDropD.innerHTML = '';
   
-  // Populate colour dropdown based on selected product
   if (selectedProduct && productColourMap[selectedProduct]) {
     productColourMap[selectedProduct].forEach(colour => {
       colourDropD.innerHTML += `<option value="${colour}">${colour}</option>`;
@@ -208,17 +219,13 @@ function handleProductDropdownChange() {
   }
 }
 
-// Function to handle colour dropdown change event
 function handleColourDropdownChange() {
   var colourDropD = document.getElementById('colourDropD');
   var selectedColour = colourDropD.value;
   console.log("Selected colour:", selectedColour);
 }
 
-// Add event listener to product dropdown for change event
 document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
-
-// Add event listener to colour dropdown for change event
 document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
 
 </script>
