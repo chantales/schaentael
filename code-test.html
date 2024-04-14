@@ -183,6 +183,11 @@ document.getElementById('colourDropD').addEventListener('change', function() {
   
     var insertBtn = document.querySelector("#insert");
     insertBtn.addEventListener('click', InsertData);
+    insertBtn.addEventListener('click', function() {
+      var enterAmount = document.getElementById('enterAmount');
+    var totalAmount = parseInt(enterAmount.value) || 0;
+    InsertData(totalAmount, basePrice);
+    });
 
     function InsertData(basePrice) {
     var selectedProduct = productDropdown.value;
@@ -191,9 +196,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var totalPrice = totalAmount * basePrice;
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
-    console.log("Total Cost:", totalCost);
-
-    InsertData(basePrice);
+    console.log("Total Price:", totalPrice);
 
         set(ref(db, "Details/"+ enterName.value), {
                 Name:enterName.value,
