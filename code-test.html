@@ -108,9 +108,7 @@
     <input id="enterEmail" type="text"> 
 
     <h4>how would you like it delivered?</h4> 
-  <select id="deliverDropD">
-    <option value="inPerson">in person</option>
-  </select>
+    <input>
 
     <br>
   <h4>Pick your product</h4>
@@ -162,7 +160,6 @@
   const db = getDatabase();
         var enterName = document.querySelector("#enterName");
         var enterEmail = document.querySelector("#enterEmail");
-        var deliverDropD = document.getElementById('deliverDropD');
         var enterAmount = document.querySelector("#enterAmount");
         var productDropdown = document.getElementById('productDropD');
         var colourDropD = document.getElementById('colourDropD');
@@ -199,7 +196,6 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         set(ref(db, "Details/"+ selectedProduct), {
                 Name:enterName.value,
                 Email: enterEmail.value,
-                Deliver: selectedDeliver,
                 Amount: enterAmount.value,
                 Product: selectedProduct,
                 Colour: selectedColour,
