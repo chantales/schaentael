@@ -108,7 +108,9 @@
     <input id="enterEmail" type="text"> 
 
     <h4>how would you like it delivered?</h4> 
-    <input id="enterDeliver" type="text"> 
+  <select id="deliverDropD">
+    <option value="inPerson">in person</option>
+  </select>
 
     <br>
   <h4>Pick your product</h4>
@@ -139,12 +141,9 @@
 
 </div>
 <script type="module">
- // Import the functions you need from the SDKs you need
- import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+
   const firebaseConfig = {
     apiKey: "AIzaSyAI2ataYlzvmEfuQry6XLqz0qN7QhfvbIs",
     authDomain: "peopleorder-3f1f4.firebaseapp.com",
@@ -154,8 +153,6 @@
     messagingSenderId: "96953007204",
     appId: "1:96953007204:web:558aae69099be63528b371"
   };
-
-  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   
   import {getDatabase, set, ref, child}
@@ -165,7 +162,7 @@
   const db = getDatabase();
         var enterName = document.querySelector("#enterName");
         var enterEmail = document.querySelector("#enterEmail");
-        var enterDeliver = document.querySelector("#enterDeliver");
+        var deliverDropD = document.getElementById('deliverDropD');
         var enterAmount = document.querySelector("#enterAmount");
         var productDropdown = document.getElementById('productDropD');
         var colourDropD = document.getElementById('colourDropD');
@@ -202,7 +199,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
         set(ref(db, "Details/"+ selectedProduct), {
                 Name:enterName.value,
                 Email: enterEmail.value,
-                Deliver: enterDeliver.value,
+                Deliver: selectedDeliver,
                 Amount: enterAmount.value,
                 Product: selectedProduct,
                 Colour: selectedColour,
