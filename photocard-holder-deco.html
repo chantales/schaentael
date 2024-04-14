@@ -81,15 +81,15 @@ body {
     {background-color: #e6b2be;}
     
     #slideshowContainer {
-        position: relative;
-        width: auto;
-    }
-    
-    .slides {
-        display:none;
-    }
-    
-    .prev, .next {
+    position: relative;
+    width: auto;
+}
+
+.slides {
+    display:none;
+}
+
+.prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
@@ -110,98 +110,114 @@ body {
   left:40px;
   border-radius: 3px 0 0 3px;
 }
-    
-    .text {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-    }
-    
-    .slides {
-      display: flex;
-      justify-content: flex-start;
-      padding: 40px;
-    }
-    
-    .orderButton {
-      background-color: #d4ccdc;
-      padding: 20px;
-      color: #FFFFFF;
-      border: #ffffff;
-      font-size: 20px;
-    }
 
-    .orderButton:hover {
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.slides {
+  display: flex;
+  justify-content: flex-start;
+  padding: 40px;
+}
+.upper, .textBig {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.textBig {
+  display: wrap;
+  flex-direction: column;
+}
+
+.orderButton {
+  background-color: #d4ccdc;
+  padding: 20px;
+  color: #FFFFFF;
+  border: #ffffff;
+  font-size: 20px;
+}
+
+.orderButton:hover {
   cursor: pointer;
+}
+
+.allInfo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (max-width:768px) {
+    .slides {
+        width:70%;
+    }
   }
 
-    .allInfo {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-    
-    @media only screen and (max-width:768px) {
-        .slides {
-            width:70%;
-        }
-      }
-    
-    
-    </style>
-    </head>
-    <body>
-      <div class="topnav">
-        <img src="SC-removebg-preview.png" id="logoNav">
-        <a href="index.html">home</a>
-        <div id="dropdown">
-            <button class="dropdownButton">products</button>
-              <div id="dropdownContent">
-        <a href="products.html">products</a>
-        <a href="order.html">order here</a>
-                </div>
-                </div>
-        <a href="about us.html">about us</a>
-         <a href="contact.html">contact us</a>
-       </div>
-      
-    
-    <div class="allInfo">
-    <div id="slideshowContainer">
-        <div class="slides">
-            <img src="Screenshot 2024-03-28 9.17.02 AM.png" style="width:600px">
-        </div>
-    
-        <div class="slides">
-            <img src="IMG_3532.PNG" style="width:600px">
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</style>
+</head>
+<body>
+  <div class="topnav">
+    <img src="SC-removebg-preview.png" id="logoNav">
+    <a href="index.html">home</a>
+    <div id="dropdown">
+        <button class="dropdownButton">products</button>
+          <div id="dropdownContent">
+    <a href="products.html">products</a>
+    <a href="order.html">order here</a>
+            </div>
+            </div>
+    <a href="about us.html">about us</a>
+     <a href="contact.html">contact us</a>
+   </div>
+  
+
+<div class="allInfo">
+  <div class="upper">
+<div id="slideshowContainer">
+    <div class="slides">
+        <img src="bearPCH.png" style="width:600px">
     </div>
 
-    
-    <div class="text">
-      <h1 id="title">PHOTOCARD HOLDERS (DECORATIVE)</h1>
-      <h3 class="desc"> Add a touch of personality to your bags or keys with these handmade photo card holders!</h3>
-      <h3 class="desc">comes in: bear, bunny + 2 coming out soon</h3>
-      <h3 class="size">size: roughly 20cm x 30cm</h3>
-      <h1 class="desc">$8</h1>
-    <a href="order.html"><button class="orderButton">click to place an order !!</button></a>
+    <div class="slides">
+        <img src="bunnyPCH.PNG" style="width:600px">
     </div>
 
-    </div>
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
 
-    <div class="textBig">
-      <h2>examples of some uses for this product include :</h2>
-      <h3>
-        - a photocard holder
-        <br>
-        - to hold your hop card / drivers license / id card
-        <br>
-        - to keep photos of your loved ones
-        <br>
-        - anything you want. 
-      </h3>
-    </div>
+
+<div class="text">
+  <h1 id="title">PHOTOCARD HOLDERS (DECORATED)</h1>
+  <h3 class="desc"> Add a touch of personality to your bags or keys with these handmade photo card holders!</h3>
+  <h3 class="desc">comes in: bear and bunny</h3>
+  <h3 class="size">size: roughly 20cm x 30cm</h3>
+  <h1 class="desc">$8</h1>
+<a href="order.html"><button class="orderButton">click to place an order !!</button></a>
+</div>
+</div>
+
+<br>
+<br>
+<div class="textBig">
+  <h2>examples of some uses for this product include :</h2>
+  <p>
+    - a photocard holder
+    <br>
+    <br>
+    - to hold your hop card / drivers license / id card
+    <br>
+    <br>
+    - to keep photos of your loved ones
+    <br>
+    <br>
+    - anything you want. 
+  </p>
+</div>
 
 </div>
     <script>
