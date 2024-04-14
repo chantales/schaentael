@@ -183,19 +183,18 @@ document.getElementById('colourDropD').addEventListener('change', function() {
   
     var insertBtn = document.querySelector("#insert");
     insertBtn.addEventListener('click', InsertData);
-    
+
     insertBtn.addEventListener('click', function() {
-      var enterAmount = document.getElementById('enterAmount');
+    var enterAmount = document.getElementById('enterAmount');
     var totalAmount = parseInt(enterAmount.value) || 0;
     var priceTotal = document.getElementById('priceTotal');
     var basePrice = parseFloat(priceTotal.dataset.basePrice) || 0;
     InsertData(totalAmount, basePrice);
-    });
+});
 
     function InsertData(totalAmount, basePrice) {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
-    var priceTotal = document.getElementById('priceTotal')
     var totalPrice = totalAmount * basePrice;
     console.log("Selected Product:", selectedProduct);
     console.log("Selected Colour:", selectedColour);
