@@ -8,6 +8,7 @@
       body {
   margin: 0;
   padding: 0;
+  font-family: monospace;
   }
 
 .topnav {
@@ -79,7 +80,71 @@
 #dropdown:hover .dropdownButton 
 {background-color: #e6b2be;}
 
+#iNeedPadding {
+  margin: 40px;
+  padding: 10px;
+  background-color: #fdfdfd;
+}
 
+#GRR {
+  font-size: 20px;
+  color: red;
+}
+
+input {
+  border-radius: 15px;
+  border-color: #e6b2be;
+  padding:5px;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+select {
+  border-radius: 15px;
+  border-width: 1.8px;
+  border-color: #e6b2be;
+  padding: 3px;
+  font-size: 15px;
+  font-family: monospace;
+  background-color: #ffffff;
+}
+
+#insert {
+  border-radius: 15px;
+  border-color: #bab0c4;
+  padding:15px;
+  font-size: 15px;
+  font-family: monospace;
+  background-color: #d4ccdc;
+}
+
+#insert a:hover {
+background-color: #9487a1;
+color:#ffffff
+}
+
+#insert a:click {
+background-color: #9487a1;
+color:#ffffff
+}
+
+h3 {
+  font-size: 18px;
+}
+
+#priceTotal {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#disclaimer {
+font-size: 20px;
+color: red;
+}
+
+#disclaimerText {
+  font-size: 15px;
+}
 
 </style>
 </head>
@@ -100,34 +165,218 @@
   
 
 <div id="iNeedPadding">
+  <div id="enterDetails">
+    <h1>Enter details</h1>
+    <h4 id="GRR">!! please refresh the page before placing another order !!</h4>
+    <h3>name</h3> 
+    <input id="enterName" type="text"> 
+
+    <h3>email</h3> 
+    <input id="enterEmail" type="text"> 
+
+    <h3>how would you like it delivered?</h3> 
+    <h4>the only type of delivery we can currently do is in person</h4>
+    <input id="enterDeliver" type="text">
+
+    <br>
+  <h3>pick your product</h3>
+<select id="productDropD">
+    <option value="">product list</option>
+    <option value="photoHolderSimple">photocard holder (simple)</option>
+    <option value="photoHolderDeco">photocard holder (decorated)</option>
+    <option value="crochetBow">crochet bow</option>
+</select>  
+
+<h3>what colour?</h3>
+<select id="colourDropD">
+  <option value="">colour</option>
+</select> 
+
+    <h3>how many would you like?</h3> 
+    <input id="enterAmount" type="number"> 
+    <br>
+    <br>
+
+<div id="priceTotal"></div>
+<br>
+<br>
+<h4 id="disclaimer">!! disclaimer !!</h4>
+<div id="disclaimerText">
+<h4>
+  1. all payments will be made in person.
+  <br>
+  <br>
+  2. please email to cancel the order.
+  <br>
+  <br>
+  3. the creation and delivery of the product may take 1-5 weeks depending on how busy we are / if it is exam season. sorry for the inconvience.
+  <br>
+  <br>
+  4. we can only deliver if you live in auckland.
+  <br>
+  <br>
+  If you have read all of this and agree, you may proceed :D !
+</h4>
+</div>
+<button id="insert">finish order</button>
+
+</div>
 
 </div>
 <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+
+ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
 
   const firebaseConfig = {
-    apiKey: "AIzaSyB5hySgzyVyBVS9F_cAmjoIidp_Hk3_nPw",
-    authDomain: "productinfocrochet.firebaseapp.com",
-    databaseURL: "https://productinfocrochet-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "productinfocrochet",
-    storageBucket: "productinfocrochet.appspot.com",
-    messagingSenderId: "5640809527",
-    appId: "1:5640809527:web:a42be23ef85a6f676523b2",
-    measurementId: "G-CW7TNSV27X"
+    apiKey: "AIzaSyAI2ataYlzvmEfuQry6XLqz0qN7QhfvbIs",
+    authDomain: "peopleorder-3f1f4.firebaseapp.com",
+    databaseURL: "https://peopleorder-3f1f4-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "peopleorder-3f1f4",
+    storageBucket: "peopleorder-3f1f4.appspot.com",
+    messagingSenderId: "96953007204",
+    appId: "1:96953007204:web:558aae69099be63528b371"
   };
-
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
   
-  import {getDatabase, set, get, update, remove, ref, child}
+  import {getDatabase, set, ref, child}
   from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
 
- const db = getDatabase();
+  document.addEventListener('DOMContentLoaded', function() {
+    var orderId = generateOrderId();
 
+  const db = getDatabase();
+        var enterName = document.querySelector("#enterName");
+        var enterEmail = document.querySelector("#enterEmail");
+        var enterAmount = document.querySelector("#enterAmount");
+        var productDropdown = document.getElementById('productDropD');
+        var colourDropD = document.getElementById('colourDropD');
+        var priceTotal = document.getElementById('priceTotal');
+
+   document.getElementById('productDropD').addEventListener('change', function() {
+    console.log("Product dropdown selection changed");
+    var selectedProduct = productDropdown.value;
+    console.log("Selected Product:", selectedProduct);
+});
+
+document.getElementById('colourDropD').addEventListener('change', function() {
+    var selectedColour = colourDropD.value;
+});
+  
+    var insertBtn = document.querySelector("#insert");
+
+    insertBtn.addEventListener('click', function() {
+    var enterAmount = document.getElementById('enterAmount');
+    var totalAmount = parseInt(enterAmount.value) || 0;
+    var priceTotal = document.getElementById('priceTotal');
+    var basePrice = parseFloat(priceTotal.dataset.basePrice) || 0;
+    InsertData(totalAmount, basePrice, orderId);
+});
+
+    function InsertData(totalAmount, basePrice, orderId) {
+    var selectedProduct = productDropdown.value;
+    var selectedColour = colourDropD.value;
+    var totalPrice = totalAmount * basePrice;
+    console.log("Selected Product:", selectedProduct);
+    console.log("Selected Colour:", selectedColour);
+    console.log("Total Price:", totalPrice);
+
+        set(ref(db, "Details/"+ enterName.value + "_" + orderId), {
+                Name:enterName.value,
+                Email: enterEmail.value,
+                Amount: enterAmount.value,
+                Product: selectedProduct,
+                Colour: selectedColour,
+                TotalPrice: totalPrice.toFixed(2),
+                OrderID: orderId,
+            })
+
+            .then(()=>{
+                 alert("Data added successfully");
+            })
+            .catch((error)=>{
+                alert(error);
+            });
+          }
+
+    const productColourMap = {
+        'photoHolderSimple': ['green', 'pink', 'blue'],
+        'photoHolderDeco': ['bear', 'bunny'],
+        'crochetBow': ['red', 'pink']
+    };
+
+    const basePriceMap = {
+    'photoHolderSimple': 7,
+    'photoHolderDeco': 8,
+    'crochetBow': 100
+};
+
+function generateOrderId() {
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var orderId = '';
+    for (var i = 0; i < 10; i++) {
+        orderId += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return orderId;
+}
+
+    function handleProductDropdownChange() {
+      console.log("Product dropdown selection changed");
+        var productDropdown = document.getElementById('productDropD');
+        var selectedProduct = productDropdown.value;
+        var colourDropD = document.getElementById('colourDropD');
+        var priceTotal = document.getElementById('priceTotal');
+
+    console.log("Selected Product:", selectedProduct);
+
+
+  var basePrice = basePriceMap[selectedProduct] || 0;
+  priceTotal.textContent = "$" + basePrice;
+  priceTotal.dataset.basePrice = basePrice;
+  console.log("Base Price:", basePrice);
+
+        updateTotalPrice();
+        populateColourDropdown(selectedProduct);
+      }
+
+        function populateColourDropdown(selectedProduct) {
+          console.log("Populating colour dropdown for product:", selectedProduct);
+          var colourDropD = document.getElementById("colourDropD")
+          colourDropD.innerHTML = '';
+
+          if (selectedProduct && productColourMap[selectedProduct]) {
+        productColourMap[selectedProduct].forEach(colour => {
+            let option = document.createElement('option');
+            option.value = colour;
+            option.textContent = colour;
+            colourDropD.appendChild(option);
+        });
+    }
+}
+
+    function handleColourDropdownChange() {
+      console.log("Colour dropdown selection changed");
+      var colourDropD = document.getElementById('colourDropD');
+        var selectedColour = colourDropD.value;
+        console.log("Selected colour:", selectedColour);
+    }
+
+    function updateTotalPrice() {
+       console.log("Updating total price...");
+    var priceTotal = document.getElementById('priceTotal');
+    var enterAmount = document.querySelector("#enterAmount");
+    var totalAmount = parseInt(enterAmount.value) || 0;
+    var basePrice = parseFloat(priceTotal.dataset.basePrice) || 0;
+        console.log("Total Amount:", totalAmount);
+        console.log("Base Price:", basePrice);
+    var totalPrice = totalAmount * basePrice;
+    priceTotal.textContent = "$" + totalPrice.toFixed(2);
+    }
+
+    handleProductDropdownChange(); 
+    document.getElementById('productDropD').addEventListener('change', handleProductDropdownChange);
+    document.getElementById('colourDropD').addEventListener('change', handleColourDropdownChange);
+    document.getElementById('enterAmount').addEventListener('input', updateTotalPrice);
+  });
 
 </script>
 </body>
