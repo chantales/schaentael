@@ -224,7 +224,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var totalAmount = parseInt(enterAmount.value) || 0;
     var priceTotal = document.getElementById('priceTotal');
     var basePrice = parseFloat(priceTotal.dataset.basePrice) || 0;
-    InsertData(totalAmount, basePrice);
+    InsertData(totalAmount, basePrice, orderID);
 });
 
     function InsertData(totalAmount, basePrice) {
