@@ -223,10 +223,10 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     var totalAmount = parseInt(enterAmount.value) || 0;
     var priceTotal = document.getElementById('priceTotal');
     var basePrice = parseFloat(priceTotal.dataset.basePrice) || 0;
-    InsertData(totalAmount, basePrice, orderID);
+    InsertData(totalAmount, basePrice, orderId);
 });
 
-    function InsertData(totalAmount, basePrice, orderID) {
+    function InsertData(totalAmount, basePrice, orderId) {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
     var totalPrice = totalAmount * basePrice;
@@ -234,14 +234,14 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     console.log("Selected Colour:", selectedColour);
     console.log("Total Price:", totalPrice);
 
-        set(ref(db, "Details/"+ enterName.value + "_" + orderID), {
+        set(ref(db, "Details/"+ enterName.value + "_" + orderId), {
                 Name:enterName.value,
                 Email: enterEmail.value,
                 Amount: enterAmount.value,
                 Product: selectedProduct,
                 Colour: selectedColour,
                 TotalPricet: totalPrice.toFixed(2),
-                OrderID: orderID,
+                OrderID: orderId,
             })
 
             .then(()=>{
