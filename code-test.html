@@ -207,6 +207,8 @@ h3 {
   from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"
 
   document.addEventListener('DOMContentLoaded', function() {
+    var orderId = generateOrderId();
+    
   const db = getDatabase();
         var enterName = document.querySelector("#enterName");
         var enterEmail = document.querySelector("#enterEmail");
@@ -249,7 +251,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
                 Amount: enterAmount.value,
                 Product: selectedProduct,
                 Colour: selectedColour,
-                TotalPricet: totalPrice.toFixed(2),
+                TotalPrice: totalPrice.toFixed(2),
                 OrderID: orderId,
             })
 
