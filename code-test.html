@@ -205,7 +205,6 @@ color:#ffffff
         var productDropdown = document.getElementById('productDropD');
         var colourDropD = document.getElementById('colourDropD');
         var priceTotal = document.getElementById('priceTotal');
-        var orderId = generateOrderId();
 
    document.getElementById('productDropD').addEventListener('change', function() {
     console.log("Product dropdown selection changed");
@@ -227,7 +226,7 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     InsertData(totalAmount, basePrice, orderID);
 });
 
-    function InsertData(totalAmount, basePrice) {
+    function InsertData(totalAmount, basePrice, orderID) {
     var selectedProduct = productDropdown.value;
     var selectedColour = colourDropD.value;
     var totalPrice = totalAmount * basePrice;
