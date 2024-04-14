@@ -200,6 +200,7 @@ color:#ffffff
         var productDropdown = document.getElementById('productDropD');
         var colourDropD = document.getElementById('colourDropD');
         var priceTotal = document.getElementById('priceTotal');
+        var orderId = generateOrderId();
 
    document.getElementById('productDropD').addEventListener('change', function() {
     console.log("Product dropdown selection changed");
@@ -229,13 +230,14 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     console.log("Selected Colour:", selectedColour);
     console.log("Total Price:", totalPrice);
 
-        set(ref(db, "Details/"+ selectedProduct), {
+        set(ref(db, "Details/"+ enterName.value + "_" + orderID), {
                 Name:enterName.value,
                 Email: enterEmail.value,
                 Amount: enterAmount.value,
                 Product: selectedProduct,
                 Colour: selectedColour,
                 TotalPricet: totalPrice.toFixed(2),
+                orderID: orderID.value,
             })
 
             .then(()=>{
@@ -257,6 +259,15 @@ document.getElementById('colourDropD').addEventListener('change', function() {
     'photoHolderDeco': 8,
     'crochetBow': 100
 };
+
+function generateOrderId() {
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var orderId = '';
+    for (var i = 0; i < 10; i++) {
+        orderId += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return orderId;
+}
 
     function handleProductDropdownChange() {
       console.log("Product dropdown selection changed");
