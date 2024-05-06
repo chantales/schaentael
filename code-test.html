@@ -79,10 +79,15 @@
 }
 
 i {
-  size: 40px;
+  size: 50px;
   color: #a2d2ffff;
 }
 
+#home, #shop, #order, #about, #contact {
+  display: flexbox;
+  flex-wrap: nowrap;
+  flex-direction:row;
+}
 
 
 
@@ -174,12 +179,18 @@ i {
 <i class="fa fa-shopping-basket fa-xl" aria-hidden="true"></i>
 <a href="products.html">shop</a>
 </div>
+<div id="order">
 <i class="fa fa-truck fa-xl" aria-hidden="true"></i>
     <a href="order.html">order</a>
+    </div>
+    <div id="about">
     <i class="fa fa-info-circle fa-xl" aria-hidden="true"></i>
     <a href="about us.html">about us</a>
+    </div>
+    <div id="contact">
     <i class="fa fa-envelope fa-xl" aria-hidden="true"></i>
     <a href="contact.html">contact us</a>
+  </div>
   </div>
 
 
