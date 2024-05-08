@@ -107,6 +107,7 @@ i {
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
+  align-items: baseline;
 }
 
 .topnav a {
@@ -132,6 +133,87 @@ i {
 
 
 
+
+
+
+
+
+
+
+.slidey fade {
+  display: none;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+        
+.slideshow-container {
+  display: block;
+  max-width: 90%;
+  height: auto;
+  position: relative;
+  margin: 0 auto;
+  padding: 20px;
+  border: #e6b2be;
+  border-radius: 20px;
+  }
+    
+.active {
+  background-color: #ffffff
+}
+        
+.fade {
+  animation-name: fade;
+  animation-duration: .5s;
+ }
+        
+ @keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+  }
+        
+.slide-img {
+  max-width: 100%; 
+  height: auto
+  }
+
+  .image {
+  width: 100%
+}
+
+.product {
+  text-align: center;
+  width: 300px;
+}
+
+hr {
+  border-width: 3px;
+  border-color:#f3d3db;
+  width: 100%;
+  margin: 10px;
+}
+
+#advertise {
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
+
+#popProduct {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #ffeaee;
+}
+
+#newProduct {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #ffeaee;
+}
 
 </style>
 
@@ -172,6 +254,81 @@ i {
     <h2>Collapsed Sidebar</h2>
 
 
+    <div class="slideshow-container">  
+      <div class="slidey fade">
+        <img src="IMG_3534.PNG"alt="Slide 1" class="slide-img" >
+      </div>
+            
+      <div class="slidey fade">
+        <img src="IMG_3535.PNG" alt="Slide 2" class="slide-img">
+      </div>
+      </div>
+    
+    <div class="welcomeText">
+    <h2>welcome!</h2>
+    <h3>hello!! Welcome to schaentaels crochet! As you can tell, we specialise in crochet items and gifts, made especially for you. We can only deliver to people in the auckland region, but we are working on expanding business! Have a lovely stay in our website. </h3>
+    </div>
+    
+    <br>
+      <div id="advertise">
+          <h2>popular products!</h2>
+          <div id="popProduct">
+            <hr>
+        <div class="product">
+        <a href="photocard-holder-simple.html"><img src="clear green.png" class="image"></a>
+        <a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
+        </div>
+    
+        <div class="product">
+          <a href="photocard-holder-deco.html"><img src="clear bear.png" class="image"></a>
+          <a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+        </div>
+        
+        <div class="product">
+          <a href="bow.html"><img src="IMG_3551.PNG" class="image"></a>
+          <a href="bow.html" target="_blank" class="text">crochet bow</a>
+          </div>
+          <hr>
+        </div>
+        <br>
+    
+      <div id="sales">
+    <h2>on sale!</h2>
+        <hr>
+    <p>coming soon...</p>
+        <hr>
+    </div>
+    <br>
+    
+    <br>
+    <h2>new products!</h2>
+    <div id="newProduct">
+      <hr>
+    <div class="product">
+    <a href="photocard-holder-simple.html"><img src="clear green.png" class="image"></a>
+    <a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
+    </div>
+    
+    <div class="product">
+      <a href="photocard-holder-deco.html"><img src="clear bear.png" class="image"></a>
+      <a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+    </div>
+    
+    <div class="product">
+      <a href="bow.html"><img src="IMG_3551.PNG" class="image"></a>
+      <a href="bow.html" target="_blank" class="text">crochet bow</a>
+      </div>
+      <hr>
+    </div>
+    
+    </div>
+      </div>
+
+
+
+
+
+
 
 
 
@@ -192,6 +349,26 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
+}
+
+
+
+
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slidey");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 3000);
 }
 </script>
 
