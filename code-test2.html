@@ -3,46 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tester2</title>
+  <title>toaster</title>
 </head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
   body {
-    background-color: #fdfdfdff;
-    margin: 0;
-    padding: 0;
     font-family: courier;
+    margin: 0;
+    padding: 0;  
+    background-image: url(IMG_3534.PNG);
+    background-size: cover;
+    background-position: center;
   }
 
   .sidebar {
   height: 100%; 
-  width: 0; /* 0 width - change this with JavaScript */
+  width: 0;
   position: fixed;
   z-index: 1; 
   top: 0;
   left: 0;
-  background-color: #fdfdfdff;
+  background-color: #FCFCFC;
   overflow-x: hidden; 
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  padding-top: 60px; 
+  transition: 0.5s; 
 }
 
-/* The sidebar links */
 .sidebar a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color:#ffafccff ;
+  color:#a2d2ffff ;
   display: block;
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
-  color: #ffc8ddff;
+  color: #bde0feff;
 }
 
-/* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
   top: 0;
@@ -51,69 +51,95 @@
   margin-left: 50px;
 }
 
-/* The button used to open the sidebar */
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color: #e6b2be;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s; /* If you want a transition effect */
+  transition: margin-left .5s; 
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
+  .topnav {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 }
 
+i {
+ padding: 5px;
+ margin: 5px;
+  size: 50px;
+  color: #a2d2ffff;
+}
 
-
-
-
-
-
-
+#home, #shop, #order, #about, #contact {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction:row;
+  align-items: center;
+}
 
 .topnav {
-  background-color: #ffafccff;
+  background-color: #a2d2ffff;
   overflow: hidden;
   font-family: monospace;
-  position: static, sticky;
+  position: fixed;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 .topnav a {
-  float: left;
-  color: #fdfdfdff;
-  text-align: center;
-  padding: 20px 20px;
   text-decoration: none;
+}
+
+.openbtn {
   font-size: 20px;
+  cursor: pointer;
+  background-color: #a2d2ffff;
+  color: white;
+  border: none;
+  height: 70px;
+  padding: 20px 20px;
+}
+
+.openbtn:hover {
+  background-color: #bde0feff;
+}
+
+#shopNav {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #a2d2ffff;
+  color: white;
+  border: none;
+  height: 70px;
+  padding: 20px 20px;
+}
+
+#contactNav {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #a2d2ffff;
+  color: white;
+  border: none;
+  height: 70px;
+  padding: 20px 20px;
+}
+
+#shopNav:hover {
+  background-color: #bde0feff;
+}
+
+#contactNav:hover {
+  background-color: #bde0feff;
 }
 
 .topnav a:hover {
-  background-color: #ffc8ddff;
-  color: #fdfdfdff;
-}
-
-.dropdownButton {
-  background-color: #ffafccff;
-  overflow: hidden;
-  font-family:'monospace';
-  padding: 20px;
-  border: none;
-  font-size: 20px;
-  color: #FFFFFF;
+  background-color: #bde0feff;
 }
 
 #logoNav  {
@@ -122,73 +148,205 @@
  float: right;
 }
 
-#dropdown {
-  float: left;
-  overflow: hidden;
-  font-family: monospace;
+#bigLogo {
+  height: auto;
+  width: 70px;
 }
 
-#dropdownContent {
+
+
+
+
+
+
+
+
+.slidey fade {
   display: none;
-  position:absolute;
-  z-index:999;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
 }
-
-#dropdownContent a {
-  color: #FFFFFF;
-  background-color: #f3d3db;
-  padding: 20px;
+        
+.slideshow-container {
   display: block;
-  font-size: 16px;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: #FFAFCC;
+  }
+    
+.active {
+  background-color: #ffffff
+}
+        
+.fade {
+  animation-name: fade;
+  animation-duration: .5s;
+ }
+        
+ @keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+  }
+        
+.slide-img {
+  max-width: 100%; 
+  height: auto
+  }
+
+  .image {
+  width: 100%
 }
 
-#dropdownContent a:hover 
-{background-color: #bab0c4
-      ;}
-
-
-#dropdown:hover #dropdownContent {
-      display: flex;
-      flex-direction: column;
+.product {
+  text-align: center;
+  width: 300px;
+  text-decoration: none;
 }
 
-#dropdown:hover .dropdownButton 
-{background-color: #e6b2be;}
+#advertise {
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
 
+#popProduct {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #FFC8DD;
+}
 
-
+#newProduct {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #FFC8DD;
+}
 
 </style>
 
 <body>
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="index.html">home</a>
-    <a href="products.html">products</a>
+<div id="home">
+<i class="fa fa-home fa-2x" aria-hidden="true"></i> 
+<a href="index.html">home</a>
+</div>
+  <div id="shop">
+<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+<a href="products.html">shop</a>
+</div>
+<div id="order">
+<i class="fa fa-truck fa-2x" aria-hidden="true"></i>
     <a href="order.html">order</a>
+    </div>
+    <div id="about">
+    <i class="fa fa-info-circle fa-2x" aria-hidden="true"></i>
     <a href="about us.html">about us</a>
+    </div>
+    <div id="contact">
+    <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
     <a href="contact.html">contact us</a>
   </div>
-
+  </div>
 
   <div class="topnav">
-    <img src="SC-removebg-preview.png" id="logoNav">
-    <a href="index.html">home</a>
-    <div id="dropdown">
-        <button class="dropdownButton">products</button>
-          <div id="dropdownContent">
-    <a href="products.html">products</a>
-    <a href="order.html">order here</a>
-            </div>
-            </div>
-    <a href="about us.html">about us</a>
-     <a href="contact.html">contact us</a>
+    <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+    <a href="products.html" ><button id="shopNav" >shop now!</button></a>
+    <img src="logo-noback.png" id="bigLogo">
+    <a href="contact.html"><button id=contactNav>contact us!</button></a>
+    <a href="index.html"><img src="SC-removebg-preview.png" id="logoNav"></a>
    </div>
 
+
   <div id="main">
-    <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
-    <h2>Collapsed Sidebar</h2>
-    <p> words words words blah ablahsash </p>
+    <div class="slideshow-container">  
+      <div class="slidey">
+        <img src="IMG_3534.PNG"alt="Slide 1" class="slide-img" >
+      </div>
+            
+      <div class="slidey">
+        <img src="IMG_3535.PNG" alt="Slide 2" class="slide-img">
+      </div>
+      </div>
+    
+    <div class="welcomeText">
+    <h2>welcome!</h2>
+    <h3>hello!! Welcome to schaentaels crochet! As you can tell, we specialise in crochet items and gifts, made especially for you. We can only deliver to people in the auckland region, but we are working on expanding business! Have a lovely stay in our website. </h3>
+    </div>
+    
+    <br>
+      <div id="advertise">
+          <h2>popular products!</h2>
+          <div id="popProduct">
+            <hr>
+        <div class="product">
+        <a href="photocard-holder-simple.html"><img src="clear green.png" class="image"></a>
+        <a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
+        </div>
+    
+        <div class="product">
+          <a href="photocard-holder-deco.html"><img src="clear bear.png" class="image"></a>
+          <a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+        </div>
+        
+        <div class="product">
+          <a href="bow.html"><img src="IMG_3551.PNG" class="image"></a>
+          <a href="bow.html" target="_blank" class="text">crochet bow</a>
+          </div>
+          <hr>
+        </div>
+        <br>
+    
+      <div id="sales">
+    <h2>on sale!</h2>
+        <hr>
+    <p>coming soon...</p>
+        <hr>
+    </div>
+    <br>
+    
+    <br>
+    <h2>new products!</h2>
+    <div id="newProduct">
+      <hr>
+    <div class="product">
+    <a href="photocard-holder-simple.html"><img src="clear green.png" class="image"></a>
+    <a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
+    </div>
+    
+    <div class="product">
+      <a href="photocard-holder-deco.html"><img src="clear bear.png" class="image"></a>
+      <a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+    </div>
+    
+    <div class="product">
+      <a href="bow.html"><img src="IMG_3551.PNG" class="image"></a>
+      <a href="bow.html" target="_blank" class="text">crochet bow</a>
+      </div>
+      <hr>
+    </div>
+    
+    </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
   </div>
 
 <script>
@@ -202,6 +360,26 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
+}
+
+
+
+
+
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slidey");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(showSlides, 3000);
 }
 </script>
 
