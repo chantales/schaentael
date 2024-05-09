@@ -37,12 +37,10 @@ padding: 0;  }
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidebar a:hover {
   color: #bde0feff;
 }
 
-/* Position and style the close button (top right corner) */
 .sidebar .closebtn {
   position: absolute;
   top: 0;
@@ -51,7 +49,6 @@ padding: 0;  }
   margin-left: 50px;
 }
 
-/* The button used to open the sidebar */
 .openbtn {
   font-size: 20px;
   cursor: pointer;
@@ -66,13 +63,11 @@ padding: 0;  }
   background-color: #bde0feff;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
-  transition: margin-left .5s; /* If you want a transition effect */
+  transition: margin-left .5s; 
   padding: 20px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
@@ -120,13 +115,24 @@ i {
   height: 70px;
 }
 
-.hello {
-float: left;
-  color: #FFFFFF;
-  background-color: #a2d2ffff;
-  text-align: center;
-  padding: 25px 30px;
+#shopNav {
   font-size: 20px;
+  cursor: pointer;
+  background-color: #a2d2ffff;
+  color: white;
+  border: none;
+  height: 70px;
+  padding: 20px 20px;
+}
+
+#contactNav {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #a2d2ffff;
+  color: white;
+  border: none;
+  height: 70px;
+  padding: 20px 20px;
 }
 
 
@@ -251,8 +257,8 @@ hr {
 
   <div class="topnav">
     <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
-    <a href="products.html" id="shopNav">shop now!</a>
-    <a href="contact.html"id=contactNav>contact us!</a>
+    <a href="products.html" ><button id="shopNav" >shop now!</button></a>
+    <a href="contact.html"><button id=contactNav>contact us!</button></a>
     <a href="index.html"><img src="SC-removebg-preview.png" id="logoNav"></a>
    </div>
 
