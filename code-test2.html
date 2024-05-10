@@ -141,7 +141,7 @@ i {
 
 #bigLogo {
   height: auto;
-  width: 150px;
+  width: 200px;
 }
 
 .overlay {
@@ -162,11 +162,11 @@ i {
 }
 
 #topIMG {
-  height: 650px;
+  height: auto;
   width:  100%;
   align-self: top;
   z-index: auto;
-  filter: brightness(75%);
+  filter: brightness(65%);
 }
 
 .welcomeText {
@@ -176,8 +176,6 @@ i {
   padding: 30px;
   margin-left: 20px;
 }
-
-
 
 .slidey fade {
   display: none;
@@ -247,7 +245,23 @@ i {
   border-color: #ffafccff;
 }
 
-#nText {
+#popProduct {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 30px;
+  text-decoration: none;
+  background-color: rgb(255, 200, 221, .5);
+}
+
+#popProduct img {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #ffafccff;
+}
+
+#Text {
   text-align: center;
 }
 
@@ -304,7 +318,7 @@ hr {
     
     
         <div id="advertise">
-        <h2 id="nText">new products!</h2>
+        <h2 id="Text">new products!</h2>
         <hr>
         <br>
 <div id="newProduct">
@@ -330,7 +344,36 @@ hr {
     </div>
 
 </div>
-    
+
+<br>
+<br>
+
+<h2 id="Text">popular products!</h2>
+<hr>
+<br>
+<div id="popProduct">
+<div class="product">
+<a href="photocard-holder-simple.html"><img src="Screenshot 2024-03-28 9.18.43 AM.png" class="image"></a>
+<a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
+<br>
+<span>$7</span>
+</div>
+
+<div class="product">
+<a href="photocard-holder-deco.html"><img src="bearPCH.png" class="image"></a>
+<a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+<br>
+<span>$8</span>
+</div>
+
+<div class="product">
+<a href="bow.html"><img src="IMG_3533.PNG" class="image"></a>
+<a href="bow.html" target="_blank" class="text">crochet bow</a>
+<br>
+<span>$5</span>
+</div>
+
+</div>
 
 
     </div>
