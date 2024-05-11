@@ -74,27 +74,22 @@ i {
   align-items: center;
 }
 
-.topperNav {
-  margin-top: 0;
-  margin-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
 .topnav {
   background-color: #a2d2ffff;
   overflow: hidden;
   font-family: monospace;
   margin-top: 0;
   margin-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
   width: 100%;
 }
 
-.topnav a {
+.topperNav {
+  height: 60px;
+  width: auto;
+  float: left;
+}
+
+.thingysNav a{
   text-decoration: none;
   font-size: 20px;
   cursor: pointer;
@@ -103,6 +98,10 @@ i {
   border: 5px;
   padding: 20px 20px;
   height:70px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-family: monospace;
 }
 
 .openbtn {
@@ -286,15 +285,16 @@ hr {
 
   <div class="topnav">
     <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
-
     <div class="topperNav">
       <img src="logo-noback.png" id="bigLogo">
     </div>
+    <div class="thingysNav">
     <a href="index.html">home</a>
     <a href="products.html">shop</a>
     <a href="order.html">order</a>
     <a href="about us.html">about us</a>
     <a href="contact us">contact us</a>
+    </div>
    </div>
 
    <div class="welcomeText">
