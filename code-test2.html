@@ -74,6 +74,14 @@ i {
   align-items: center;
 }
 
+.topperNav {
+  margin-top: 0;
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
 .topnav {
   background-color: #a2d2ffff;
   overflow: hidden;
@@ -95,7 +103,6 @@ i {
   border: 5px;
   padding: 20px 20px;
   height:70px;
-  float: right;
 }
 
 .openbtn {
@@ -277,17 +284,18 @@ hr {
   </div>
   </div>
 
-  
-  <img src="logo-noback.png" id="bigLogo">
   <div class="topnav">
     <button class="openbtn" onclick="openNav()">&#9776; Open Sidebar</button>
+
+    <div class="topperNav">
+      <img src="logo-noback.png" id="bigLogo">
+    </div>
     <a href="index.html">home</a>
     <a href="products.html">shop</a>
     <a href="order.html">order</a>
     <a href="about us.html">about us</a>
     <a href="contact us">contact us</a>
    </div>
-
 
    <div class="welcomeText">
     <h2>welcome!</h2>
