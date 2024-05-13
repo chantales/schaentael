@@ -36,9 +36,13 @@
     margin-left: -250px;
 }
 
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #6d7fcc;
+}
+
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
@@ -55,6 +59,7 @@
 #sidebar ul li a:hover {
     color: #fff;
     background: #bde0feff;
+    text-decoration: none;
 }
 
 #sidebar ul li.active>a,
@@ -108,43 +113,25 @@ a[data-toggle="collapse"] {
 
         <!-- Sidebar  -->
         <nav id="sidebar">
+          <div class="sidebar-header">
+            <h3>schaentael</h3>
+        </div>
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Home 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Home 3</a>
-                        </li>
-                    </ul>
+                  <li>
+                    <a href="index.html">home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="products.html">shop</a>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Page 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
-                        </li>
-                    </ul>
+                  <a href="order.html">order here</a>
+              </li>
+              <li>
+                    <a href="about us.html">about us</a>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
+                    <a href="contact.html">contact us</a>
                 </li>
             </ul>
         </nav>
