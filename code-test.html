@@ -3,182 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>toaster</title>
+  <title>roaster</title>
 </head>
 
 <style>
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
 }
 
-#sidebar {
-  min-width: 250px;
-  max-width: 250px;
-  background: #FCFCFC;
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex: 1 1 0;
+  max-width: 300px;
+  padding: 2rem 1rem;
+  background-color: #fff;
+}
+
+.sidebar h3 {
   color: #a2d2ffff;
-  transition: all 0.3s;
-  z-index: 3; 
-  top: 0;
-  left: 0;
-  overflow-x: hidden; 
+  font-size: 20px;
+  margin-bottom: 0.5rem;
 }
 
-#sidebar.active {
-    margin-left: -250px;
+.sidebar .menu {
+  margin: 0 -1rem;
 }
 
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #a2d2ffff;
-    color: #fff;
+.sidebar .menu .menu-item {
+  display: block;
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.4 linear;
 }
 
-#sidebar ul.components {
-    padding: 20px 0;
+.sidebar .menu .menu-item:hover, 
+.sidebar .menu .menu-item.is-active {
+  color: #bde0feff;
+  border-right: 5px solid #bde0feff;
 }
 
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    color: #fff;
-    background: #a2d2ffff;
-    text-decoration: none;
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-    background: #bde0feff;
-}
-
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-.dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-}
-
-.nav-link {
-  color: #a2d2ffff;
-}
-
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-
-#content {
-    width: 100%;
-    padding: 20px;
-    min-height: 100vh;
-    transition: all 0.3s;
-}
-
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
-
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -250px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
-}
 </style>
+
 <body>
-    <div class="wrapper">
+<div class="app">
+  <aside>
+    <h3>menu</h3>
+  <nav class="menu">
+    <a href="index.html" class="menu-item is-active">home</a>
+    <a href="about us.html" class="menu-item">about us</a>
+    <a href="products.html"  class="menu-item">shop</a>
+    <a href="order.html"  class="menu-item">order</a>
+    <a href="contact us"  class="menu-item">contact us</a>
+  </nav>
+  </aside>
+
+  <main class="content">
+    <h1>hi</h1>
+  </main>
+</div>
 
 
-        <!-- Sidebar  -->
-        <nav id="sidebar">
-          <div class="sidebar-header">
-            <h3>schaentael</h3>
-        </div>
-            <ul class="list-unstyled components">
-                <li class="active">
-                  <li>
-                    <a href="index.html" class="linkys">home</a>
-                </li>
-                <li>
-                    <a href="products.html" class="linkys">shop</a>
-                </li>
-                <li>
-                  <a href="order.html" class="linkys">order here</a>
-              </li>
-              <li>
-                    <a href="about us.html" class="linkys">about us</a>
-                </li>
-                <li>
-                    <a href="contact.html" class="linkys">contact us</a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Page Content  -->
-        <div id="content">
-
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fa fa-align-left"></i>
-                        <span>open menu</span>
-                    </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fa fa-align-justify"></i>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.html">home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="products.html">shop</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="order.html">order</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contact.html">contact us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
+<script>
 
 
+</script>
 
-
-
-
-    <script>
-
-      $(document).ready(function () {
-
-    $('#sidebarCollapse').on('click', function () {
-        $('#sidebar').toggleClass('active');
-    });
-
-});
-    </script>
+</body>
+</html>
