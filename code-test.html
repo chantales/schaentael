@@ -20,20 +20,20 @@
 }
 
 #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #7386D5;
-    color: #fff;
-    transition: all 0.3s;
+  min-width: 250px;
+  max-width: 250px;
+  background: #FCFCFC;
+  color: #a2d2ffff;
+  transition: all 0.3s;
+  z-index: 3; 
+  top: 0;
+  left: 0;
+  overflow-x: hidden; 
+  padding-top: 60px;
 }
 
 #sidebar.active {
     margin-left: -250px;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    background: #6d7fcc;
 }
 
 #sidebar ul.components {
@@ -42,7 +42,7 @@
 }
 
 #sidebar ul p {
-    color: #fff;
+    color: chartreuse;
     padding: 10px;
 }
 
@@ -53,14 +53,14 @@
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
+    color: #fff;
+    background: #bde0feff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #bde0feff;
 }
 
 a[data-toggle="collapse"] {
@@ -114,11 +114,7 @@ a[data-toggle="collapse"] {
 
         <!-- Sidebar  -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
-            </div>
             <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
