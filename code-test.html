@@ -85,7 +85,21 @@ body {
 
 .hamburg > span::before {
   content: ' ';
-  top: -8px;
+  top: 8px;
+}
+
+.menu-toggle.is-active .hamburg > span {
+  transform: rotate(45deg);
+}
+
+.menu-toggle.is-active .hamburg > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+.menu-toggle.is-active .hamburg > span::after {
+  top: 0;
+  transform: rotate(90deg);
 }
 
 @media (max-width: 1024px) {
@@ -141,7 +155,13 @@ body {
 
 
 <script>
+  const menu_toggle = document.querySelector('.menu-toggle')
+  const sidebar = document.querySelector('.sidebar')
 
+  menu_toggle.addEventListener('click', () => {
+    menu_toggle.classList.toggle('is-active');
+    sidebar.classList.toggle('is-active')
+  })
 
 </script>
 
