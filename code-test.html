@@ -21,7 +21,7 @@ body {
   flex: 1 1 0;
   max-width: 300px;
   padding: 2rem 1rem;
-  background-color: #fff;
+  background-color: #FCFCFC;
 }
 
 .sidebar h3 {
@@ -37,7 +37,7 @@ body {
 .sidebar .menu .menu-item {
   display: block;
   padding: 20px;
-  color: #fff;
+  color: #a2d2ffff;
   text-decoration: none;
   transition: 0.4 linear;
 }
@@ -47,11 +47,83 @@ body {
   color: #bde0feff;
   border-right: 5px solid #bde0feff;
 }
-</style>
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 60px;
+  background-color: #a2d2ffff;
+  cursor: pointer;
+}
+
+.hamburg {
+  position: relative;
+  top: calc(50% -2px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+}
+
+.hamburg > span,
+.hamburg > span::before,
+.hamburg > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 99px;
+  background-color: #FCFCFC;
+  transition-duration: .25s;
+}
+
+.hamburg > span::before {
+  content: ' ';
+  top: -8px;
+}
+
+.hamburg > span::before {
+  content: ' ';
+  top: -8px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+    transition: 0.4 linear;
+  }
+  .sidebar.is-active {
+    left: 0;
+  }
+}
+
+  </style>
 
 <body>
 <div class="app">
+  <div class="menu-toggle">
+    <div class="hamburg">
+      <span></span>
+    </div>
+  </div>
+
   <aside class="sidebar">
+
     <h3>menu</h3>
   <nav class="menu">
     <a href="index.html" class="menu-item is-active">home</a>
