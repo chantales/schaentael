@@ -141,6 +141,136 @@ body {
 
 
 
+
+
+.overlay {
+  position: absolute;
+  top: 650px;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background-color:#fdfdfdff;
+  z-index: 1;
+}
+
+#main {
+  transition: margin-left .5s; 
+  padding: 20px;
+  position: relative; 
+  z-index: 1; 
+}
+
+#topIMG {
+  height: auto;
+  width:  100%;
+  align-self: top;
+  z-index: auto;
+  filter: brightness(65%);
+}
+
+.welcomeText {
+  z-index:2;
+  color: white;
+  position: absolute;
+  padding: 30px;
+  margin-left: 20px;
+}
+
+.slidey fade {
+  display: none;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+        
+.slideshow-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: #FFAFCC;
+  }
+    
+.active {
+  background-color: #ffffff
+}
+        
+.fade {
+  animation-name: fade;
+  animation-duration: .5s;
+ }
+        
+ @keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+  }
+        
+.slide-img {
+  max-width: 100%; 
+  height: auto
+  }
+
+.image {
+  width: 100%
+}
+
+.product {
+  text-align: center;
+  width: 300px;
+  text-decoration: none;
+  padding: 10px;
+}
+
+#advertise {
+  display: flex;
+  flex-direction: column;
+  margin:10px;
+}
+
+#newProduct {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 30px;
+  text-decoration: none;
+  background-color: rgb(255, 200, 221, .5);
+}
+
+#newProduct img {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #ffafccff;
+}
+
+#popProduct {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 30px;
+  text-decoration: none;
+  background-color: rgb(255, 200, 221, .5);
+}
+
+#popProduct img {
+  border-width: 4px;
+  border-style: solid;
+  border-color: #ffafccff;
+}
+
+#Text {
+  text-align: center;
+}
+
+hr {
+  width: 40px;
+  color: #ffafccff;
+  border-style: solid;
+}
+
+
   </style>
 
 <body>
@@ -163,10 +293,87 @@ body {
   </nav>
   </aside>
 
+  <div class="welcomeText">
+    <h2>welcome!</h2>
+    <h3>hello!! Welcome to schaentaels crochet! We specialise in crochet items and gifts, made especially for you. We can only deliver to people in the auckland region, but we are working on expanding business! </h3>
+    </div>
+
+<img src="IMG_3535.PNG" id="topIMG">
+
+
+
+
   <main class="content">
-    <h1>hi</h1>
-  </main>
+    <div id="main">
+      <div id="advertise">
+      <h2 id="Text">new products!</h2>
+      <hr>
+      <br>
+  <div id="newProduct">
+  <div class="product">
+      <a href="photocard-holder-simple.html"><img src="Screenshot 2024-03-28 9.18.43 AM.png" class="image"></a>
+      <a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
+      <br>
+      <span>$7</span>
+  </div>
+  
+  <div class="product">
+      <a href="photocard-holder-deco.html"><img src="bearPCH.png" class="image"></a>
+      <a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+      <br>
+      <span>$8</span>
+  </div>
+  
+  <div class="product">
+      <a href="bow.html"><img src="IMG_3533.PNG" class="image"></a>
+      <a href="bow.html" target="_blank" class="text">crochet bow</a>
+      <br>
+    <span>$5</span>
+  </div>
+
 </div>
+
+<br>
+<br>
+
+  <h2 id="Text">popular products!</h2>
+<hr>
+<br>
+<div id="popProduct">
+<div class="product">
+<a href="photocard-holder-simple.html"><img src="Screenshot 2024-03-28 9.18.43 AM.png" class="image"></a>
+<a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
+<br>
+<span>$7</span>
+</div>
+
+<div class="product">
+<a href="photocard-holder-deco.html"><img src="bearPCH.png" class="image"></a>
+<a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+<br>
+<span>$8</span>
+</div>
+
+<div class="product">
+<a href="bow.html"><img src="IMG_3533.PNG" class="image"></a>
+<a href="bow.html" target="_blank" class="text">crochet bow</a>
+<br>
+<span>$5</span>
+</div>
+
+</div>
+
+
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+  </main>
 
 
 <script>
