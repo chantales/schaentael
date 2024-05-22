@@ -13,6 +13,34 @@ body {
   background-color: #ffffff;
 }
 
+@media (max-width: 1024px) {
+  .sidebar {
+    max-width: 300px;
+  }
+  #newProduct {
+  width: 700px;
+  background-color: chartreuse;
+}
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 300px;
+    transition: 0.4 linear;
+  }
+  .sidebar.is-active {
+    left: 0;
+  }
+  #newProduct {
+  width: 500px;
+  background-color: yellow;
+}
+}
+
 .app {
   display: flex;
   min-height: 100vh;
@@ -116,32 +144,6 @@ body {
 .menu-toggle.is-active .hamburg > span::after {
   top: 0;
   transform: rotate(90deg);
-}
-
-@media (max-width: 1024px) {
-  .sidebar {
-    max-width: 300px;
-  }
-  #newProduct {
-  width: 700px;
-}
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    max-width: 300px;
-    transition: 0.4 linear;
-  }
-  .sidebar.is-active {
-    left: 0;
-  }
-  #newProduct {
-  width: 500px;
-}
 }
 
 .content {
