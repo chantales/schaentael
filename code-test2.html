@@ -233,7 +233,9 @@ hr {
   border-style: solid;
 }
 
-
+i {
+  color: #FCFCFC;
+}
   </style>
 
 <body>
@@ -249,11 +251,13 @@ hr {
   <aside class="sidebar">
     <h3>menu</h3>
   <nav class="menu">
-    <a href="index.html" class="menu-item is-active">home</a>
-    <a href="about us.html" class="menu-item">about us</a>
-    <a href="products.html"  class="menu-item">shop</a>
-    <a href="order.html"  class="menu-item">order</a>
-    <a href="contact.html"  class="menu-item">contact us</a>
+    <nav class="menu">
+      <div class="menu-item"><i class="fa fa-home fa-2x" aria-hidden="true"></i><a href="index.html">home</a></div>
+      <div class="menu-item"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i><a href="about us.html">about us</a></div>
+      <div class="menu-item"><i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i><a href="products.html">shop</a></div>
+      <div class="menu-item"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i><a href="order.html">order</a></div>
+      <div class="menu-item"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i><a href="contact.html">contact us</a></div>
+    </nav>
   </nav>
   </aside>
 
