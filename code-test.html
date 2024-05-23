@@ -40,6 +40,11 @@ body {
   }
 }
 
+.allStuff {
+  display: flex;
+  flex-direction: column;
+}
+
 .app {
   display: flex;
   min-height: 100vh;
@@ -167,7 +172,7 @@ body {
   align-self: top;
   filter: brightness(65%);
   z-index: 1;
-  display: block;
+  display: none;
 }
 
 .welcomeText {
@@ -279,6 +284,8 @@ i {
     <h3>hello!! Welcome to schaentaels crochet! We specialise in crochet items and gifts, made especially for you. We can only deliver to people in the auckland region, but we are working on expanding business! </h3>
   </div>
 
+
+<div class="allStuff">
 <img src="grannySq.jpg" id="topIMG">      
 
 <div class="newProBig">
@@ -309,6 +316,7 @@ i {
 </div>
 </div>
 
+</div>
 </div>
 </div>
   </main>
