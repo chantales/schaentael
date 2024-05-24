@@ -12,31 +12,6 @@ body {
   font-family: "Roboto";
   }
 
-  @media (max-width: 1024px) {
- .sidebar {
-   max-width: 300px;
- }
-}
-
-
-@media (max-width: 768px) {
- .sidebar {
-   position: fixed;
-   top: 0;
-   height: 100vh;
-   width: 100%;
-   max-width: 200px;
-   transition: 0.4 linear;
- }
- .sidebar.is-active {
-   left: 0;
- }
- .slides {
-        width:70%;
-    }
-}
-
-
 .app {
  display: flex;
  min-height: 100vh;
@@ -175,7 +150,8 @@ body {
 
 #slideshowContainer {
     position: relative;
-    width: auto;
+    width: 600px;
+    padding: 20px
 }
 
 .slides {
@@ -214,8 +190,14 @@ body {
 .slides {
   display: flex;
   justify-content: flex-start;
-  padding: 40px;
+  width: 600px;
 }
+
+.slides img {
+height: auto;
+width: 600px;
+}
+
 .upper, .textBig {
   display: flex;
   flex-wrap: wrap;
@@ -226,11 +208,13 @@ body {
   border-width: 4px;
   border-style: solid;
   border-color: #ffafccff;
+  padding: 20px;
 }
 
 .textBig {
   display: wrap;
   flex-direction: column;
+  font-family: "roboto";
 }
 
 .orderButton {
@@ -254,7 +238,37 @@ body {
   flex-direction: row;
 }
 
+@media (max-width: 1024px) {
+ .sidebar {
+   max-width: 300px;
+ }
+}
 
+@media (max-width: 768px) {
+ .sidebar {
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 100%;
+   max-width: 200px;
+   transition: 0.4 linear;
+ }
+ .sidebar.is-active {
+   left: 0;
+ }
+ #slideshowContainer {
+  width: 350px;
+ }
+ .slides {
+  width: 350px;
+ }
+ .slides img {
+  width: 350px;
+ }
+ .prev, .next {
+  font-size: 30px;
+ }
+}
 </style>
 </head>
 <body>

@@ -13,30 +13,6 @@
         padding: 0;
         font-family: "Roboto";
         }
-      
-        @media (max-width: 1024px) {
- .sidebar {
-   max-width: 300px;
- }
-}
-
-
-@media (max-width: 768px) {
- .sidebar {
-   position: fixed;
-   top: 0;
-   height: 100vh;
-   width: 100%;
-   max-width: 200px;
-   transition: 0.4 linear;
- }
- .sidebar.is-active {
-   left: 0;
- }
- .slides {
-  width:70%;
-}
-}
 
 .app {
  display: flex;
@@ -174,10 +150,11 @@
  position: relative;
 }
       
-      #slideshowContainer {
-          position: relative;
-          width: auto;
-      }
+#slideshowContainer {
+    position: relative;
+    width: 600px;
+    padding: 20px
+}
       
       .slides {
           display:none;
@@ -212,13 +189,18 @@
         padding: 10px;
       }
       
-      .slides {
-        display: flex;
-        justify-content: flex-start;
-        padding: 40px;
-      }
+.slides {
+  display: flex;
+  justify-content: flex-start;
+  width: 600px;
+}
+
+.slides img {
+height: auto;
+width: 600px;
+}
       
-      .orderButton {
+.orderButton {
   background-color: #a2d2ffff;
   border-color: rgb(142, 198, 250);
   border-width: 4px;
@@ -234,6 +216,7 @@
   border-width: 4px;
   border-style: solid;
   border-color: #ffafccff;
+  padding: 20px;
 }
       
       .orderButton:hover {
@@ -247,6 +230,37 @@
       }
     
       
+@media (max-width: 1024px) {
+ .sidebar {
+   max-width: 300px;
+ }
+}
+
+@media (max-width: 768px) {
+ .sidebar {
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 100%;
+   max-width: 200px;
+   transition: 0.4 linear;
+ }
+ .sidebar.is-active {
+   left: 0;
+ }
+ #slideshowContainer {
+  width: 350px;
+ }
+ .slides {
+  width: 350px;
+ }
+ .slides img {
+  width: 350px;
+ }
+ .prev, .next {
+  font-size: 30px;
+ }
+}
       
       </style>
       </head>
