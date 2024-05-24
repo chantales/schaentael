@@ -13,28 +13,6 @@ body {
   font-family: "Roboto";
   }
 
-  @media (max-width: 1024px) {
- .sidebar {
-   max-width: 300px;
- }
-}
-
-
-@media (max-width: 768px) {
- .sidebar {
-   position: fixed;
-   top: 0;
-   height: 100vh;
-   width: 100%;
-   max-width: 200px;
-   transition: 0.4 linear;
- }
- .sidebar.is-active {
-   left: 0;
- }
-}
-
-
 .app {
  display: flex;
  min-height: 100vh;
@@ -190,16 +168,32 @@ body {
     justify-content: flex-start;
 }
 
-@media only screen and (max-width:768px) {
-    #whole {
-        flex-direction: column;
-    }
-    #image {
-        width:100%
-    }
+@media (max-width: 1024px) {
+ .sidebar {
+   max-width: 300px;
+ }
 }
 
 
+@media (max-width: 768px) {
+ .sidebar {
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 100%;
+   max-width: 200px;
+   transition: 0.4 linear;
+ }
+ .sidebar.is-active {
+   left: 0;
+ }
+ #whole {
+        flex-direction: column;
+    }
+    #image {
+        width: 350px;
+    }
+}
 </style>
 
 </head>
