@@ -12,43 +12,6 @@ body {
       padding: 0;
       font-family: "Roboto";
 }
-    
-@media (max-width: 1024px) {
- .sidebar {
-   max-width: 300px;
- }
- body {
-  background-color: darksalmon;
- }
-}
-
-
-@media (max-width: 768px) {
- .sidebar {
-   position: fixed;
-   top: 0;
-   height: 100vh;
-   width: 100%;
-   max-width: 200px;
-   transition: 0.4 linear;
- }
- .sidebar.is-active {
-   left: 0;
- }
- #slideshowContainer {
-  width: 200px;
- }
- .slides {
-  width: 200px;
- }
- .slides img {
-  width: 200px;
- }
-body {
-  background-color: blueviolet;
-}
-}
-
 
 .app {
  display: flex;
@@ -275,7 +238,41 @@ width: 600px;
 }
 
 
+@media (max-width: 1024px) {
+ .sidebar {
+   max-width: 300px;
+ }
+ body {
+  background-color: darksalmon;
+ }
+}
 
+
+@media (max-width: 768px) {
+ .sidebar {
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 100%;
+   max-width: 200px;
+   transition: 0.4 linear;
+ }
+ .sidebar.is-active {
+   left: 0;
+ }
+ #slideshowContainer {
+  width: 200px;
+ }
+ .slides {
+  width: 200px;
+ }
+ .slides img {
+  width: 200px;
+ }
+body {
+  background-color: blueviolet;
+}
+}
 </style>
 </head>
 <body>
