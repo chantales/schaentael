@@ -15,45 +15,6 @@ body {
   text-decoration: none;
 }
 
-@media (max-width: 1024px) {
-  .sidebar {
-    max-width: 300px;
-  }
-  .newProduct {
-    width: 800px;
-    background-color: crimson;
-  }
-  .popProduct {
-    width: 800px;
-  }
-  body {
-    background-color: navajowhite;
-  }
-}
-
-@media (max-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 100%;
-    max-width: 200px;
-    transition: 0.4 linear;
-  }
-  .sidebar.is-active {
-    left: 0;
-  }
-  .newProduct {
-    width: 400px;
-  }
-  .popProduct {
-    width: 400px;
-  }
-  body {
-    background-color: orange;
-  }
-}
-
 .app {
   display: flex;
   min-height: 100vh;
@@ -254,6 +215,44 @@ i {
   padding-right: 20px;
 }
 
+@media (max-width: 1024px) {
+  .sidebar {
+    max-width: 300px;
+  }
+  .newProduct {
+    width: 800px;
+    background-color: crimson;
+  }
+  .popProduct {
+    width: 800px;
+  }
+  body {
+    background-color: navajowhite;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 200px;
+    transition: 0.4 linear;
+  }
+  .sidebar.is-active {
+    left: 0;
+  }
+  .newProduct {
+    width: 400px;
+  }
+  .popProduct {
+    width: 400px;
+  }
+  body {
+    background-color: orange;
+  }
+}
   </style>
 
 <body>
