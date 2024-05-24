@@ -1,230 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homepage</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-  <style>
-* {box-sizing: border-box;}
-
+<style>
 body {
   margin: 0;
   padding: 0;
   font-family: "Roboto";
-  }
-
-  @media (max-width: 1024px) {
- .sidebar {
-   max-width: 300px;
- }
+  background-color: #ffffff;
+  text-decoration: none;
 }
-
-
-@media (max-width: 768px) {
- .sidebar {
-   position: fixed;
-   top: 0;
-   height: 100vh;
-   width: 100%;
-   max-width: 200px;
-   transition: 0.4 linear;
- }
- .sidebar.is-active {
-   left: 0;
- }
-}
-
 
 .app {
- display: flex;
- min-height: 100vh;
+  display: flex;
+  min-height: 100vh;
 }
-
 
 .sidebar {
- flex: 1 1 0;
- position: fixed;
- height: 100vh;
- width: 100%;
- max-width: 300px;
- padding: 2rem 1rem;
- background-color: #a2d2ffff;
- left: -320px;
- top: 0;
- transition: 0.4 linear;
- z-index: 3;
+  flex: 1 1 0;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  max-width: 300px;
+  padding: 2rem 1rem;
+  background-color: #a2d2ffff;
+  left: -320px;
+  top: 0;
+  transition: 0.4 linear;
+  z-index: 3;
 }
-
 
 .sidebar h3 {
- color: #FCFCFC;
- font-size: 30px;
- margin-bottom: 0.5rem;
+  color: #FCFCFC;
+  font-size: 30px;
+  margin-bottom: 0.5rem;
 }
-
 
 .sidebar.is-active {
-   left: 0;
+    left: 0;
 }
-
 
 .sidebar .menu {
- margin: 0 -1rem;
+  margin: 0 -1rem;
 }
-
 
 .sidebar .menu .menu-item {
- display: block;
- padding: 20px;
- color: #FCFCFC;
- text-decoration: none;
- transition: 0.4 linear;
- font-size: 25px;
+  display: block;
+  padding: 20px;
+  color: #FCFCFC;
+  text-decoration: none;
+  transition: 0.4 linear;
+  font-size: 25px;
 }
 
-
-.sidebar .menu .menu-item:hover,
+.sidebar .menu .menu-item:hover, 
 .sidebar .menu .menu-item.is-active {
- color: #FCFCFC;
- border-right: 5px solid #FCFCFC;
+  color: #FCFCFC;
+  border-right: 5px solid #FCFCFC;
 }
-
 
 .menu-toggle {
- display: block;
- position: fixed;
- top: 2rem;
- right: 2rem;
- width: 60px;
- height: 60px;
- cursor: pointer;
- z-index: 3;
+  display: block;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 3;
 }
-
 
 .hamburg {
- position: absolute;
- top: calc(50% -2px);
- left: 50%;
- transform: translate(-50%, -50%);
- width: 32px;
- z-index: 4;
+  position: absolute;
+  top: calc(50% -2px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  z-index: 4;
 }
-
 
 .hamburg > span,
 .hamburg > span::before,
 .hamburg > span::after {
- display: block;
- position: absolute;
- width: 100%;
- height: 4px;
- border-radius: 99px;
- background-color: #a2d2ffff;
- transition-duration: .25s;
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 99px;
+  background-color: #a2d2ffff;
+  transition-duration: .25s;
 }
-
 
 .hamburg > span::before {
- content: ' ';
- top: -8px;
+  content: ' ';
+  top: -8px;
 }
-
 
 .hamburg > span::after {
- content: ' ';
- top: 8px;
+  content: ' ';
+  top: 8px;
 }
-
 
 .menu-toggle.is-active .hamburg > span {
- transform: rotate(45deg);
+  transform: rotate(45deg);
 }
-
 
 .menu-toggle.is-active .hamburg > span::before {
- top: 0;
- transform: rotate(0deg);
+  top: 0;
+  transform: rotate(0deg);
 }
-
 
 .menu-toggle.is-active .hamburg > span::after {
- top: 0;
- transform: rotate(90deg);
+  top: 0;
+  transform: rotate(90deg);
 }
-
 
 .menuLong {
- align-items: center;
- display: flex;
+  align-items: center;
+  display: flex;
 }
-
 
 .content {
- margin: 20px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
 }
-
 
 #main {
- transition: margin-left .5s;
- padding: 20px;
- position: relative;
-}
-
-.slidey fade {
-  display: none;
-  vertical-align: middle;
-  max-width: 100%;
-  height: auto;
-}
-        
-.slideshow-container {
-  display: block;
-  max-width: 90%;
-  height: auto;
-  position: relative;
-  margin: 0 auto;
+  transition: margin-left .5s; 
   padding: 20px;
-  border: #e6b2be;
-  border-radius: 20px;
-  }
-    
-.active {
-  background-color: #ffffff
+  position: relative; 
 }
-        
-.fade {
-  animation-name: fade;
-  animation-duration: .5s;
- }
-        
- @keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-  }
-        
-.slide-img {
-  max-width: 100%; 
-  height: auto
-  }
 
-  .image {
-  width: 100%
+#topIMG {
+  height: auto;
+  width: 1200px;
+  align-self: top;
+  filter: brightness(65%);
+  z-index: 1;
+}
+
+.welcomeText {
+  color: #bde0feff;
+  position: absolute;
+  padding: 30px;
+  margin-left: 20px;
+}
+
+.image {
+  width: 100%;
+  border-width: 4px;
+  border-style: solid;
+  border-color: #ffafccff;
 }
 
 .product {
   text-align: center;
   width: 300px;
-}
-
-hr {
-  border-width: 3px;
-  border-color:#f3d3db;
-  width: 100%;
-  margin: 10px;
+  text-decoration: none;
+  padding: 10px;
 }
 
 #advertise {
@@ -233,148 +171,189 @@ hr {
   margin:10px;
 }
 
-#popProduct {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  background-color: #ffeaee;
+.word {
+  text-decoration: none;
+  text-align: center;
 }
 
-#newProduct {
+.newProduct {
   display: flex;
   flex-wrap: nowrap;
-  flex-direction: row;
   justify-content: space-evenly;
-  background-color: #ffeaee;
+  align-items: baseline;
+  padding: 20px;
+  background-color: rgb(255, 200, 221, .5);
+  width: 1200px;
 }
 
-</style>
-</head>
+.ProBig {
+  text-align: center;
+}
+
+.popProduct {
+  display: flex;
+  flex-wrap: nowrap;;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  background-color: rgb(255, 200, 221, .5);
+  width: 1200px;
+}
+
+hr {
+  width: 40px;
+  color: #ffafccff;
+  border-style: solid;
+}
+
+i {
+  color: #FCFCFC;
+  padding-right: 20px;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    max-width: 300px;
+  }
+  .newProduct {
+    width: 800px;
+  }
+  .popProduct {
+    width: 800px;
+  }
+  .ProBig {
+    width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    max-width: 200px;
+    transition: 0.4 linear;
+  }
+  .sidebar.is-active {
+    left: 0;
+  }
+  .newProduct {
+    width: 350px;
+  }
+  .popProduct {
+    width: 350px;
+  }
+  .ProBig {
+    width: 350px;
+  }
+}
+  </style>
 
 <body>
-  <main class="content">
-    <div id="main">
-    <div class="app">
-     <div class="menu-toggle">
-       <div class="hamburg">
-         <span></span>
-       </div>
-     </div>
-
-
-     <aside class="sidebar">
-      <h3>menu</h3>
-    <nav class="menu">
-      <div class="menu-item is-active"><i class="fa fa-home fa-1x" aria-hidden="true"></i><a href="index.html">home</a></div>
-      <div class="menu-item"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i><a href="about us.html">about us</a></div>
-      <div class="menu-item"><i class="fa fa-shopping-basket fa-1x" aria-hidden="true"></i><a href="products.html">shop</a></div>
-      <div class="menu-item"><i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i><a href="order.html">order</a></div>
-      <div class="menu-item"><i class="fa fa-envelope fa-1x" aria-hidden="true"></i><a href="contact.html">contact us</a></div>
-    </nav>
-    </aside>    
-
-<div class="slideshow-container">  
-  <div class="slidey fade">
-    <img src="IMG_3534.PNG"alt="Slide 1" class="slide-img" >
-  </div>
-        
-  <div class="slidey fade">
-    <img src="IMG_3535.PNG" alt="Slide 2" class="slide-img">
-  </div>
+<main class="content">
+<div id="main">
+<div class="app">
+  <div class="menu-toggle">
+    <div class="hamburg">
+      <span></span>
+    </div>
   </div>
 
-<div class="welcomeText">
-<h2>welcome!</h2>
-<h3>hello!! Welcome to schaentaels crochet! As you can tell, we specialise in crochet items and gifts, made especially for you. We can only deliver to people in the auckland region, but we are working on expanding business! Have a lovely stay in our website. </h3>
+  <aside class="sidebar">
+    <h3>menu</h3>
+  <nav class="menu">
+    <div class="menu-item is-active"><i class="fa fa-home fa-1x" aria-hidden="true"></i><a href="index.html">home</a></div>
+    <div class="menu-item"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i><a href="about us.html">about us</a></div>
+    <div class="menu-item"><i class="fa fa-shopping-basket fa-1x" aria-hidden="true"></i><a href="products.html">shop</a></div>
+    <div class="menu-item"><i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i><a href="order.html">order</a></div>
+    <div class="menu-item"><i class="fa fa-envelope fa-1x" aria-hidden="true"></i><a href="contact.html">contact us</a></div>
+  </nav>
+  </aside>
+
+  <div class="textAndImage">
+  <div class="welcomeText">
+    <h2>welcome!</h2>
+    <h3>hello!! Welcome to schaentaels crochet! We specialise in crochet items and gifts, made especially for you. We can only deliver to people in the auckland region, but we are working on expanding business! </h3>
+  </div>
+
+
+<div class="allStuff">
+<img src="grannySq.jpg" id="topIMG">      
 </div>
 
-<br>
-  <div id="advertise">
-      <h2>popular products!</h2>
-      <div id="popProduct">
+<div class="ProBig">
+      <h2 id="Text">new products!</h2>
         <hr>
+        <br>
+<div  class="newProduct">
     <div class="product">
-    <a href="photocard-holder-simple.html"><img src="clear green.png" class="image"></a>
-    <a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
-    </div>
-
-    <div class="product">
-      <a href="photocard-holder-deco.html"><img src="clear bear.png" class="image"></a>
-      <a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
+        <a href="photocard-holder-simple.html"><img src="Screenshot 2024-03-28 9.18.43 AM.png" class="image"></a>
+        <a href="photocard-holder-simple.html" target="_blank" class="text" class="word">photocard holder (simple)</a>
+        <br>
+        <span>$7</span>
     </div>
     
     <div class="product">
-      <a href="bow.html"><img src="IMG_3551.PNG" class="image"></a>
-      <a href="bow.html" target="_blank" class="text">crochet bow</a>
-      </div>
-      <hr>
+        <a href="photocard-holder-deco.html"><img src="bearPCH.png" class="image"></a>
+        <a href="photocard-holder-deco.html" target="_blank" class="text" class="word">photocard holder (deco)</a>
+        <br>
+        <span>$8</span>
     </div>
-    <br>
-
-  <div id="sales">
-<h2>on sale!</h2>
-    <hr>
-<p>coming soon...</p>
-    <hr>
-</div>
-<br>
-
-<br>
-<h2>new products!</h2>
-<div id="newProduct">
-  <hr>
-<div class="product">
-<a href="photocard-holder-simple.html"><img src="clear green.png" class="image"></a>
-<a href="photocard-holder-simple.html" target="_blank" class="text">photocard holder (simple)</a>
-</div>
-
-<div class="product">
-  <a href="photocard-holder-deco.html"><img src="clear bear.png" class="image"></a>
-  <a href="photocard-holder-deco.html" target="_blank" class="text">photocard holder (deco)</a>
-</div>
-
-<div class="product">
-  <a href="bow.html"><img src="IMG_3551.PNG" class="image"></a>
-  <a href="bow.html" target="_blank" class="text">crochet bow</a>
-  </div>
-  <hr>
-</div>
-
-</div>
-  </div>
-
-
+    
+    <div class="product">
+        <a href="bow.html"><img src="IMG_3533.PNG" class="image"></a>
+        <a href="bow.html" target="_blank" class="text" class="word">crochet bow</a>
+        <br>
+      <span>$5</span>
+    </div>
 </div>
 </div>
- </main>
-  <script>
- const menu_toggle = document.querySelector('.menu-toggle')
- const sidebar = document.querySelector('.sidebar')
+
+<div class="ProBig">
+      <h2 id="Text">popular products!</h2>
+        <hr>
+        <br>
+<div  class="popProduct">
+    <div class="product">
+        <a href="photocard-holder-simple.html"><img src="Screenshot 2024-03-28 9.18.43 AM.png" class="image"></a>
+        <a href="photocard-holder-simple.html" target="_blank" class="text" class="word">photocard holder (simple)</a>
+        <br>
+        <span>$7</span>
+    </div>
+    
+    <div class="product">
+        <a href="photocard-holder-deco.html"><img src="bearPCH.png" class="image"></a>
+        <a href="photocard-holder-deco.html" target="_blank" class="text" class="word">photocard holder (deco)</a>
+        <br>
+        <span>$8</span>
+    </div>
+    
+    <div class="product">
+        <a href="bow.html"><img src="IMG_3533.PNG" class="image"></a>
+        <a href="bow.html" target="_blank" class="text" class="word">crochet bow</a>
+        <br>
+      <span>$5</span>
+    </div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+  </main>
 
 
- menu_toggle.addEventListener('click', () => {
-   menu_toggle.classList.toggle('is-active');
-   sidebar.classList.toggle('is-active')
- })
- 
-let slideIndex = 0;
-showSlides();
+<script>
+  const menu_toggle = document.querySelector('.menu-toggle')
+  const sidebar = document.querySelector('.sidebar')
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("slidey");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}    
-  slides[slideIndex-1].style.display = "block";  
-  setTimeout(showSlides, 3000);
-}
-        </script>
-        
+  menu_toggle.addEventListener('click', () => {
+    menu_toggle.classList.toggle('is-active');
+    sidebar.classList.toggle('is-active')
+  })
+
+</script>
 
 </body>
-
 </html>
