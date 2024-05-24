@@ -13,73 +13,163 @@
         font-family: Courier;
         }
       
-      .topnav {
-        background-color: #f3d3db;
-        overflow: hidden;
-        font-family:'monospace';
-      }
-      
-      .topnav a {
-        float: left;
-        color: white;
-        text-align: center;
-        padding: 20px 20px;
-        text-decoration: none;
-        font-size: 20px;
-      }
-      
-      .topnav a:hover {
-        background-color: #e6b2be;
-        color: #ffffff;
-      }
-      
-      .dropdownButton {
-        background-color: #f3d3db;
-        overflow: hidden;
-        font-family:'monospace';
-        padding: 20px;
-        border: none;
-        font-size: 20px;
-        color: #FFFFFF;
-      }
-      
-      #logoNav  {
-       height: 60px;
-       width: auto;
-       float: right;
-      }
-      
-      #dropdown {
-        float: left;
-        overflow: hidden;
-      }
-      
-      #dropdownContent {
-        display: none;
-        position:absolute;
-        z-index:999;
-      }
-      
-      #dropdownContent a {
-        color: #FFFFFF;
-        background-color: #d4ccdc;
-        padding: 20px;
-        display: block;
-        font-size: 16px;
-      }
-      
-      #dropdownContent a:hover 
-      {background-color: #bab0c4
-            ;}
-      
-      
-      #dropdown:hover #dropdownContent {
-            display: flex;
-            flex-direction: column;
-      }
-      
-      #dropdown:hover .dropdownButton 
-      {background-color: #e6b2be;}
+        @media (max-width: 1024px) {
+ .sidebar {
+   max-width: 300px;
+ }
+}
+
+
+@media (max-width: 768px) {
+ .sidebar {
+   position: fixed;
+   top: 0;
+   height: 100vh;
+   width: 100%;
+   max-width: 200px;
+   transition: 0.4 linear;
+ }
+ .sidebar.is-active {
+   left: 0;
+ }
+}
+
+
+.app {
+ display: flex;
+ min-height: 100vh;
+}
+
+
+.sidebar {
+ flex: 1 1 0;
+ position: fixed;
+ height: 100vh;
+ width: 100%;
+ max-width: 300px;
+ padding: 2rem 1rem;
+ background-color: #a2d2ffff;
+ left: -320px;
+ top: 0;
+ transition: 0.4 linear;
+ z-index: 3;
+}
+
+
+.sidebar h3 {
+ color: #FCFCFC;
+ font-size: 30px;
+ margin-bottom: 0.5rem;
+}
+
+
+.sidebar.is-active {
+   left: 0;
+}
+
+
+.sidebar .menu {
+ margin: 0 -1rem;
+}
+
+
+.sidebar .menu .menu-item {
+ display: block;
+ padding: 20px;
+ color: #FCFCFC;
+ text-decoration: none;
+ transition: 0.4 linear;
+ font-size: 25px;
+}
+
+
+.sidebar .menu .menu-item:hover,
+.sidebar .menu .menu-item.is-active {
+ color: #FCFCFC;
+ border-right: 5px solid #FCFCFC;
+}
+
+
+.menu-toggle {
+ display: block;
+ position: fixed;
+ top: 2rem;
+ right: 2rem;
+ width: 60px;
+ height: 60px;
+ cursor: pointer;
+ z-index: 3;
+}
+
+
+.hamburg {
+ position: absolute;
+ top: calc(50% -2px);
+ left: 50%;
+ transform: translate(-50%, -50%);
+ width: 32px;
+ z-index: 4;
+}
+
+
+.hamburg > span,
+.hamburg > span::before,
+.hamburg > span::after {
+ display: block;
+ position: absolute;
+ width: 100%;
+ height: 4px;
+ border-radius: 99px;
+ background-color: #a2d2ffff;
+ transition-duration: .25s;
+}
+
+
+.hamburg > span::before {
+ content: ' ';
+ top: -8px;
+}
+
+
+.hamburg > span::after {
+ content: ' ';
+ top: 8px;
+}
+
+
+.menu-toggle.is-active .hamburg > span {
+ transform: rotate(45deg);
+}
+
+
+.menu-toggle.is-active .hamburg > span::before {
+ top: 0;
+ transform: rotate(0deg);
+}
+
+
+.menu-toggle.is-active .hamburg > span::after {
+ top: 0;
+ transform: rotate(90deg);
+}
+
+
+.menuLong {
+ align-items: center;
+ display: flex;
+}
+
+
+.content {
+ margin: 20px;
+}
+
+
+#main {
+ transition: margin-left .5s;
+ padding: 20px;
+ position: relative;
+}
       
       #slideshowContainer {
           position: relative;
@@ -152,19 +242,26 @@
       </style>
       </head>
       <body>
-        <div class="topnav">
-          <img src="SC-removebg-preview.png" id="logoNav">
-          <a href="index.html">home</a>
-          <div id="dropdown">
-              <button class="dropdownButton">products</button>
-                <div id="dropdownContent">
-          <a href="products.html">products</a>
-          <a href="order.html">order here</a>
-                  </div>
-                  </div>
-          <a href="about us.html">about us</a>
-           <a href="contact.html">contact us</a>
-         </div>
+        <main class="content">
+          <div id="main">
+          <div class="app">
+           <div class="menu-toggle">
+             <div class="hamburg">
+               <span></span>
+             </div>
+           </div>
+
+
+           <aside class="sidebar">
+            <h3>menu</h3>
+          <nav class="menu">
+            <div class="menu-item is-active"><i class="fa fa-home fa-1x" aria-hidden="true"></i><a href="index.html">home</a></div>
+            <div class="menu-item"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i><a href="about us.html">about us</a></div>
+            <div class="menu-item"><i class="fa fa-shopping-basket fa-1x" aria-hidden="true"></i><a href="products.html">shop</a></div>
+            <div class="menu-item"><i class="fa fa-shopping-cart fa-1x" aria-hidden="true"></i><a href="order.html">order</a></div>
+            <div class="menu-item"><i class="fa fa-envelope fa-1x" aria-hidden="true"></i><a href="contact.html">contact us</a></div>
+          </nav>
+          </aside>          
         
       
       <div class="allInfo">
@@ -189,7 +286,20 @@
 </div>    
       
       </div>
+
+    </div>
+  </div>
+   </main>
       <script>
+ const menu_toggle = document.querySelector('.menu-toggle')
+ const sidebar = document.querySelector('.sidebar')
+
+
+ menu_toggle.addEventListener('click', () => {
+   menu_toggle.classList.toggle('is-active');
+   sidebar.classList.toggle('is-active')
+ })
+ 
       let slideIndex = 1;
       showSlides(slideIndex);
       
