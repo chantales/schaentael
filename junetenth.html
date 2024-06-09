@@ -10,14 +10,24 @@
 <h1> click my very trustable button</h1>
       <button id="buttonSus">click me!!</button>
       <button id="buttonNotSus">no click me!!</button>
+      <br>
+      <br>
+      <input>
+      <button id="userInput">insert colour</button>
 
       <script>
             var buttonSus = document.getElementById("buttonSus")
             var buttonNotSus = document.getElementById("buttonNotSus")
+            var userInput = document.getElementById("userInput")
 
             buttonSus.addEventListener('click', buttonSusFunction)
+            userInput.addEventListener('click', colourFunction)
 // anything after comma is what u want to happen after click
             
+            function colourFunction() {
+                  document.body.style.backgroundColor = userInput;
+            }
+
             function buttonSusFunction() {
                   alert("wrong button!! you are now sus");
                   document.body.style.backgroundColor = "red";
