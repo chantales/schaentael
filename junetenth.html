@@ -13,13 +13,19 @@
 
       <script>
             var buttonSus = document.getElementById("buttonSus")
+            var buttonNotSus = document.getElementById("buttonNotSus")
 
             buttonSus.addEventListener('click', buttonSusFunction)
 // anything after comma is what u want to happen after click
             
             function buttonSusFunction() {
                   alert("wrong button!! you are now sus");
-                  setBackground()
+                  document.body.style.backgroundColor = "red";
+            }
+
+            function buttonNotSus() {
+                  alert("you picked correct! you are not sus!!");
+                  document.body.style.backgroundColor = "green";
             }
 
       </script>
