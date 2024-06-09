@@ -21,6 +21,7 @@
             var userInput = document.getElementById("userInput")
 
             buttonSus.addEventListener('click', buttonSusFunction)
+            buttonNotSus.addEventListener('click', buttonNotSusFunction)
             userInput.addEventListener('click', colourFunction)
 // anything after comma is what u want to happen after click
             
@@ -33,7 +34,7 @@
                   document.body.style.backgroundColor = "red";
             }
 
-            function buttonNotSus() {
+            function buttonNotSusFunction() {
                   alert("you picked correct! you are not sus!!");
                   document.body.style.backgroundColor = "green";
             }
