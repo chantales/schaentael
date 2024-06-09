@@ -12,20 +12,21 @@
       <button id="buttonNotSus">no click me!!</button>
       <br>
       <br>
-      <input>
-      <button id="userInput">insert colour</button>
+      <input id="userInput">
+      <button id="colorButton">insert colour</button>
 
       <script>
             var buttonSus = document.getElementById("buttonSus")
             var buttonNotSus = document.getElementById("buttonNotSus")
             var userInput = document.getElementById("userInput")
+            var colorButton = document.getElementById("colorButton")
 
             buttonSus.addEventListener('click', buttonSusFunction)
             buttonNotSus.addEventListener('click', buttonNotSusFunction)
-            userInput.addEventListener('click', colourFunction)
+            colorButton.addEventListener('click', colorFunction)
 // anything after comma is what u want to happen after click
             
-            function colourFunction() {
+            function colorFunction() {
                   document.body.style.backgroundColor = userInput;
             }
 
