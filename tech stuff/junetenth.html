@@ -24,18 +24,18 @@
             var buttonSus = document.getElementById("buttonSus")
             var buttonNotSus = document.getElementById("buttonNotSus")
             var userInput = document.getElementById("userInput")
-            var hidden = document.getElementById("hidden")
+            var show = document.getElementById("hidden")
 
             buttonSus.addEventListener('click', buttonSusFunction);
             buttonNotSus.addEventListener('click', buttonNotSusFunction);
-            hidden.addEventListener('click', hiddenFunction);
+            show.addEventListener('click', showFunction);
              // anything after comma is what u want to happen after click
 
-            hidden.style.display = "none";
+            show.style.display = "none";
             //order matters!! put this first so it reads this first and then does the function
 
-            function hiddenFunction() {
-                  hidden.style.display = "block"
+            function showFunction() {
+                  show.style.display = "block"
             }
 
             function buttonSusFunction() {
