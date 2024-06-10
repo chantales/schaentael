@@ -9,14 +9,34 @@
       <button id="showB">click me to show deepest darkest secrets</button>
       <button id="hideB"> no hide them</button>
       <button id="colorB">make it blue!</button>
-      <h3 id="text">i sleep with a night light on at night time</h3>
+
+      <div id="secrets">
+      <h3>i sleep with a night light on at night time</h3>
+      </div>
 
 <script>
       var showB = document.getElementById("showB")
       var hideB = document.getElementById("hideB")
       var colorB = document.getElementById("colorB")
+      var secrets = document.getElementById("secrets")
 
-      
+      showB.addEventListener('click', showFunction)
+      hideB.addEventListener('click', hideFunction)
+      colorB.addEventListener('click', colorFunction)
+
+      secrets.style.display = "none";
+
+      function showFunction() {
+            secrets.style.display = "block"; 
+      }
+
+      function hideFunction() {
+            secrets.style.display = "none"; 
+      }
+
+      function colorFunction() {
+            document.body.style.backgroundColor = "lightblue";
+      }
 
 
 </script>
