@@ -12,22 +12,28 @@
       <button id="buttonNotSus">no click me!!</button>
       <br>
       <br>
+      <br>
+      <br>
       <input id="userInput">
-      <button id="colorButton">insert colour</button>
+      <button id="show">show secrets</button>
+
+      <h3 id="hidden"> secrets~</h3>
 
       <script>
             var buttonSus = document.getElementById("buttonSus")
             var buttonNotSus = document.getElementById("buttonNotSus")
             var userInput = document.getElementById("userInput")
-            var colorButton = document.getElementById("colorButton")
+            var hidden = document.getElementById("hidden")
 
             buttonSus.addEventListener('click', buttonSusFunction)
             buttonNotSus.addEventListener('click', buttonNotSusFunction)
-            colorButton.addEventListener('click', colorFunction)
-// anything after comma is what u want to happen after click
+            hidden.addEventListener('click', hiddenFunction)
+             // anything after comma is what u want to happen after click
+
+            hidden.style.display = "none"
             
-            function colorFunction() {
-                  document.body.style.backgroundColor = userInput.value;
+            function hiddenFunction() {
+                  hidden.style.display = "block"
             }
 
             function buttonSusFunction() {
@@ -39,6 +45,7 @@
                   alert("you picked correct! you are not sus!!");
                   document.body.style.backgroundColor = "green";
             }
+
 
       </script>
 </body>
