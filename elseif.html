@@ -27,13 +27,13 @@ function ageResponse() {
     var response = document.getElementById("message");
 
     if(userAge < 13) {
-        response.message = "You're a child";
+        response.textContent = "You're a child";
     } else if(userAge >= 13 && userAge < 20) {
-        response.message = "You're a teenager";
+        response.textContent = "You're a teenager";
     } else if(userAge >= 20 && userAge < 65) {
-        response.message = "You're an adult";
+        response.textContent = "You're an adult";
     } else {
-        response.message = "You're a senior";
+        response.textContent = "You're a senior";
     }
 }
       </script>
