@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>age response</title>
+</head>
+<body>
+ 
+      <h3>how old art thou?</h3>
+      <input id="userInput" type="number" placeholder="enter your age">
+      <button id="submitB">enter</button>
+      <h3 id="message"></h3>
+
+
+
+      <script>
+
+document.getElementById("submitB").addEventListener("click", ageResponse)
+
+
+
+function ageResponse() {
+    const userAge = document.getElementById("userInput").value;
+    var response = document.getElementById("response");
+
+    if(userAge < 13) {
+        response.textContent = "You're a child";
+    } else if(userAge >= 13 && userAge < 20) {
+        response.textContent = "You're a teenager";
+    } else if(userAge >= 20 && userAge < 65) {
+        response.textContent = "You're an adult";
+    } else {
+        response.textContent = "You're a senior";
+    }
+}
+      </script>
+</body>
+</html>
