@@ -25,7 +25,7 @@ var submitB = document.getElementById("submitB")
 submitB.addEventListener("click", responseFunction)
 
 function responseFunction() {
-const userInput = document.getElementById("userInput");
+const userInput = document.getElementById("userInput").value;
 var response = document.getElementById("response");
 
 if(userInput = "orange") {
@@ -33,7 +33,7 @@ if(userInput = "orange") {
         document.body.style.backgroundColor = "lightgreen"
 } else {
         response.textContent = "wrong!";
-        document.body.style.backgroundColor
+        document.body.style.backgroundColor = "red"
 }
 }
 
