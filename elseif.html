@@ -15,23 +15,24 @@
 
 
       <script>
+            var submitB = document.getElementById("submitB")
+            const userAge = document.getElementById("userInput").value;
+            var response = document.getElementById("response"); 
 
-document.getElementById("submitB").addEventListener("click", ageResponse)
-
-
+            submitB.addEventListener("click", ageResponse)
 
 function ageResponse() {
     const userAge = document.getElementById("userInput").value;
     var response = document.getElementById("response");
 
     if(userAge < 13) {
-        response.textContent = "You're a child";
+        response.message = "You're a child";
     } else if(userAge >= 13 && userAge < 20) {
-        response.textContent = "You're a teenager";
+        response.message = "You're a teenager";
     } else if(userAge >= 20 && userAge < 65) {
-        response.textContent = "You're an adult";
+        response.message = "You're an adult";
     } else {
-        response.textContent = "You're a senior";
+        response.message = "You're a senior";
     }
 }
       </script>
