@@ -8,17 +8,24 @@
 <body>
 <h2>guess the number</h2>
 <input id="number" type="number">
-<button id="logButton">press me!!</button>
+<button id="logButton">submit answer</button>
+<br>
+<button id="add"> +1</button>
+<button id="minus">-1</button>
+<h3 id="response"></h3>
 
       <script>
             var logButton = document.getElementById("logButton")
             var number = 3;
             var counter = 0;
+            var add = +1;
+            var minus = -1
+
 
             logButton.addEventListener("click", logFunction);
 
             function logFunction() {
-                  console.log(counter);
+                  response.textContent= counter;
             } 
 
 
